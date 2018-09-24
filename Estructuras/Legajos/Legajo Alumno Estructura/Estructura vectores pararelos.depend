@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1537826510 source:c:\users\mirta\desktop\putos todos\estructuras\estructura vectores pararelos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"legajo.h"
+
+1537826361 c:\users\mirta\desktop\putos todos\estructuras\estructura vectores pararelos\legajo.h
+
+1537826510 source:c:\users\mirta\desktop\putos todos\estructuras\estructura vectores pararelos\legajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"legajo.h"
+
