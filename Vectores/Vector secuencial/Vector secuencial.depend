@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1536358203 source:c:\users\mirta\desktop\vectores\vector secuencial\main.c
+	<stdio.h>
+	<stdlib.h>
+
