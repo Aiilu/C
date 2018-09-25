@@ -1,5 +1,7 @@
 #ifndef legajo
-
+#define VACIO -1
+#define BAJA 0
+#define LLENO 1
 typedef struct
 {
     int legajos;
@@ -7,6 +9,9 @@ typedef struct
     char sexos[15];
     float alturas;
     int notas;
+    int estado;
+    char sexo;
+    float promedio;
 } sAlumno;
 
 void menuOpcion(sAlumno[]);
@@ -15,7 +20,7 @@ void mostrarUnAlumno(sAlumno);
 void cargarAlumnos(sAlumno[],int);
 void mostrarAlumnos(sAlumno[],int);
 void ordenarAlfabeticamente(sAlumno[],int);
-//void ordenarPorSexo(sAlumno[],int);
+void ordenarPorSexo(sAlumno[],int);
 void alumnosAprobados(sAlumno[],int);
 void alumnosDesaprobados(sAlumno[],int);
 void alumnoLlamadoJuan(sAlumno[],int);
@@ -28,5 +33,8 @@ void porcentAlumAprobDesap(sAlumno[],int);
 void alumnosPromSeis(sAlumno[],int);
 //GRAFICO
 void modificarListado(sAlumno[],int);
+void darDeBaja(sAlumno[],int);
+int buscarLibre(sAlumno[],int);
+void cargarLibre(sAlumno[],int);
 
 #endif // legajo

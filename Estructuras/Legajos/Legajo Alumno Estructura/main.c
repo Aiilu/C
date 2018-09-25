@@ -9,7 +9,7 @@ int main()
 {
     sAlumno listadoAlumnos[T];
 
-     int opcion;
+    int opcion;
     int flag=0;
 
     do
@@ -23,8 +23,8 @@ int main()
         {
         case 1:
             system("cls");
-            cargarAlumnos(listadoAlumnos,T);
-            flag=1;
+            cargarLibre(listadoAlumnos,T);
+            //cargarAlumnos(listadoAlumnos,T);
             break;
         case 2:
             system("cls");
@@ -142,11 +142,23 @@ int main()
                 printf("Primero debe cargar los datos \n");
                 break;
             }
+
+        case 11:
+            if(flag==1)
+            {
+            darDeBaja(listadoAlumnos,T);
+            }
+            else{
+                printf("Primero debe cargar los datos\n");
+            }
+            break;
+        case 12:
+            break;
         default:
             printf("No existe esta opcion");
         }
     }
-    while(opcion!=11);
+    while(opcion!=12);
 
     return 0;
 }

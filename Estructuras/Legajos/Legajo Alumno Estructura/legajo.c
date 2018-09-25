@@ -10,6 +10,11 @@ sAlumno cargarUnAlumno()
 
     printf("Ingrese legajo: ");
     scanf("%d",&miAlumno.legajos);
+    if(miAlumno.legajos<0 || miAlumno.legajos>9999)
+    {
+        printf("Reingrese un legajo valido: ");
+        scanf("%d",&miAlumno.legajos);
+    }
     fflush(stdin);
 
     printf("Ingrese nombre: ");
@@ -25,7 +30,7 @@ sAlumno cargarUnAlumno()
     }
     fflush(stdin);
 
-    printf("Ingrese la altura: ");
+    printf("Ingrese la altura: "); //validar solo numeros
     scanf("%f",&miAlumno.alturas);
     fflush(stdin);
 
@@ -201,6 +206,7 @@ void alumnoMasMediocre(sAlumno listas[], int tam)
 void modificarListado(sAlumno listas[],int tam)
 {
     int i;
+    int cargo=0;
     int legajo;
     char opcion;
     int auxnota;
@@ -209,7 +215,7 @@ void modificarListado(sAlumno listas[],int tam)
     scanf("%d",&legajo);
     for(i=0; i<tam; i++)
     {
-        if(legajo == listas[i].legajos)
+        if(listas[i].estado != VACIO &&legajo == listas[i].legajos)
         {
             //mostrar un alumno
             mostrarUnAlumno(listas[i]);
@@ -225,16 +231,81 @@ void modificarListado(sAlumno listas[],int tam)
             {
                 listas[i].notas=auxnota;
                 printf("\n\nDatos actualizados exitosamente!");
-            }
-            else
-            {
-                printf("No se ha completado la operacion");
+                cargo =1;
             }
         }
     }
+  if(cargo == 0)
+    {
+        printf("Legajo inexistente");
+    }
 }
 
-void alumnosMinimoPromedio(sAlumno listas[],int tam)
+void darDeBaja(sAlumno listas[],int tam)
+{
+    int i;
+    int cargo=0;
+    int legajo;
+    char opcion;
+    mostrarAlumnos(listas,tam);
+    printf("Ingrese legajo a buscar: ");
+    scanf("%d",&legajo);
+    for(i=0; i<tam; i++)
+    {
+        if(listas[i].estado != LLENO &&legajo == listas[i].legajos)
+        {
+
+            mostrarUnAlumno(listas[i]);
+
+            printf("Esta seguro de querer borrar este legajo?");
+            opcion=getch();
+            if(opcion == 's')
+            {
+                listas[i].estado= BAJA;
+                printf("\n\nAlumno borrado!");
+                cargo =1;
+            }
+        }
+    }
+  if(cargo == 0)
+    {
+        printf("Se ha cancelado la operacion");
+    }
+}
+
+int buscarLibre(sAlumno listas[],int tam)
+ {
+ int index = -1;
+ int i;
+    for(i=0; i<tam; i++)
+    {
+        if(listas[i].estado==VACIO)
+        {
+            index = i;
+            break;
+        }
+    }
+    return index;
+}
+
+void cargarLibre(sAlumno listas[],int tam)
+{
+    int bandera;
+
+    bandera = buscarLibre(listas,tam); //buscra lib me dice donde, lo guard en bamde
+    if(bandera!=-1)
+    {
+        listas[bandera] = cargarUnAlumno();
+        listas[bandera].estado = LLENO;
+
+    }
+
+    else
+    {
+        printf("No hay espacio");
+    }
+}
+/*void alumnosMinimoPromedio(sAlumno listas[],int tam)
 {
     int i;
     float prom;
@@ -287,23 +358,5 @@ void alumnosPromSeis(sAlumno listas[],int tam)
         mostrarUnAlumno(listas[i]);
     }
 }
+*/
 
-/*porcentAlumAprobDesap(sAlumno listas[], int tam)
-{
-int i;
-int aprobados =0;
-int desaprobados =0;
-int cont=0;
-float aprobados, desaprobados;
-for(i=0;i<tam;i++)
-{
-if(listas[i].notas<=)
-{
-aprobados ++
-}
-else
-{
-desaprobados ++;
-}
-}
-}*/

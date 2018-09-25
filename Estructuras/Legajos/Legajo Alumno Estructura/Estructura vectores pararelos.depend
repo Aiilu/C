@@ -15,3 +15,19 @@
 	<conio.h>
 	"legajo.h"
 
+1537839531 source:c:\users\mirta\desktop\cursoingreso\cursada--c\estructuras\legajos\legajo alumno estructura\legajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"legajo.h"
+
+1537839684 c:\users\mirta\desktop\cursoingreso\cursada--c\estructuras\legajos\legajo alumno estructura\legajo.h
+
+1537839634 source:c:\users\mirta\desktop\cursoingreso\cursada--c\estructuras\legajos\legajo alumno estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"legajo.h"
+
