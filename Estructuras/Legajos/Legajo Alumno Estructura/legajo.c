@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
+#include <ctype.h>
 #include "legajo.h"
 
 sAlumno cargarUnAlumno()
@@ -10,15 +11,20 @@ sAlumno cargarUnAlumno()
 
     printf("Ingrese legajo: ");
     scanf("%d",&miAlumno.legajos);
-    if(miAlumno.legajos<0 || miAlumno.legajos>9999)
+    /*if(miAlumno.legajos>9999 || miAlumno.legajos<0)
     {
         printf("Reingrese un legajo valido: ");
         scanf("%d",&miAlumno.legajos);
-    }
+    }*/
     fflush(stdin);
 
     printf("Ingrese nombre: ");
     scanf("%s",miAlumno.nombres);
+    /*if((miAlumno.nombres < 'a' || miAlumno.nombres > 'z' ) && (miAlumno.nombres > 'A' || miAlumno.nombres<'Z'))
+    {
+        printf("Reingese un nombre valido: ");
+        scanf("%s",miAlumno.nombres);
+    }*/
     fflush(stdin);
 
     printf("Ingrese la nota: ");
@@ -32,6 +38,24 @@ sAlumno cargarUnAlumno()
 
     printf("Ingrese la altura: "); //validar solo numeros
     scanf("%f",&miAlumno.alturas);
+     /* miAlumno.alturas=isdigit(miAlumno.alturas);  //GUARDA DOS VECES
+    if(miAlumno.alturas==0)
+    {
+        printf("Ingrese una altura valida: ");
+        scanf("%f",&miAlumno.alturas);
+        miAlumno.alturas=isdigit(miAlumno.alturas);
+    }*/
+    fflush(stdin);
+
+     printf("Ingrese sexo. F o M");
+    scanf("%c",&miAlumno.sexo);
+   // miAlumno.sexo=toupper(miAlumno.sexo);
+    if(miAlumno.sexo !='M' || miAlumno.sexo !='F')
+    {
+        printf("Reingrese un sexo valido");
+    scanf("%c",&miAlumno.sexo);
+   // miAlumno.sexo=toupper(miAlumno.sexo);
+    }
     fflush(stdin);
 
     return miAlumno;
@@ -288,75 +312,24 @@ int buscarLibre(sAlumno listas[],int tam)
     return index;
 }
 
-void cargarLibre(sAlumno listas[],int tam)
+int cargarLibre(sAlumno listas[],int tam)
 {
     int bandera;
+    int retorno=0;
 
     bandera = buscarLibre(listas,tam); //buscra lib me dice donde, lo guard en bamde
-    if(bandera!=-1)
+    if(bandera!=VACIO)
     {
         listas[bandera] = cargarUnAlumno();
         listas[bandera].estado = LLENO;
 
+     return 1;
     }
 
     else
     {
         printf("No hay espacio");
     }
+    return retorno;
 }
-/*void alumnosMinimoPromedio(sAlumno listas[],int tam)
-{
-    int i;
-    float prom;
-    int cont=0;
-    int acum=0;
-    for(i=0; i<tam; i++)
-    {
-        cont ++;
-        acum+=listas[i].notas;
-
-    }
-    prom = acum/cont;
-    if(prom<6)
-    {
-        mostrarUnAlumno(listas[i]);
-    }
-}
-void alumnosMaximoPromedio(sAlumno listas[],int tam)
-{
-    int i;
-    float prom;
-    int cont=0;
-    int acum=0;
-    for (i=0; i<tam; i++)
-    {
-        cont ++;
-        acum+=listas[i].notas;
-    }
-    prom = acum/cont;
-
-    if(prom>6)
-    {
-        mostrarUnAlumno(listas[i]);
-    }
-}
-void alumnosPromSeis(sAlumno listas[],int tam)
-{
-    int i;
-    float prom;
-    int acum=0;
-    int cont=0;
-    for (i=0; i<tam; i++)
-    {
-        cont ++;
-        acum+=listas[i].notas;
-    }
-    prom = acum/cont;
-    if(prom == 6)
-    {
-        mostrarUnAlumno(listas[i]);
-    }
-}
-*/
 

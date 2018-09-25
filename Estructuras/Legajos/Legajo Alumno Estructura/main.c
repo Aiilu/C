@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
+#include <ctype.h>
 #include "legajo.h"
 #define T 2
 
@@ -23,8 +24,16 @@ int main()
         {
         case 1:
             system("cls");
-            cargarLibre(listadoAlumnos,T);
-            //cargarAlumnos(listadoAlumnos,T);
+             /* if(cargarLibre(listadoAlumnos,T)!=-1)
+            {
+                printf("Carga Satisfactoria!");
+            }
+            else
+            {
+                printf("No hay espacio!");
+            }*/
+            cargarAlumnos(listadoAlumnos,T);
+            flag=1;
             break;
         case 2:
             system("cls");

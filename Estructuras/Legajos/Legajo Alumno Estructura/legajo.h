@@ -35,6 +35,6 @@ void alumnosPromSeis(sAlumno[],int);
 void modificarListado(sAlumno[],int);
 void darDeBaja(sAlumno[],int);
 int buscarLibre(sAlumno[],int);
-void cargarLibre(sAlumno[],int);
+int cargarLibre(sAlumno[],int);
 
 #endif // legajo
