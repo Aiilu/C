@@ -11,20 +11,20 @@ sAlumno cargarUnAlumno()
 
     printf("Ingrese legajo: ");
     scanf("%d",&miAlumno.legajos);
-    /*if(miAlumno.legajos>9999 || miAlumno.legajos<0)
+    if(miAlumno.legajos>9999 || miAlumno.legajos<0)
     {
         printf("Reingrese un legajo valido: ");
         scanf("%d",&miAlumno.legajos);
-    }*/
+    }
     fflush(stdin);
 
     printf("Ingrese nombre: ");
     scanf("%s",miAlumno.nombres);
-    /*if((miAlumno.nombres < 'a' || miAlumno.nombres > 'z' ) && (miAlumno.nombres > 'A' || miAlumno.nombres<'Z'))
+    if((miAlumno.nombres < 'a' || miAlumno.nombres > 'z' ) && (miAlumno.nombres > 'A' || miAlumno.nombres<'Z'))
     {
         printf("Reingese un nombre valido: ");
         scanf("%s",miAlumno.nombres);
-    }*/
+    }
     fflush(stdin);
 
     printf("Ingrese la nota: ");
@@ -34,36 +34,35 @@ sAlumno cargarUnAlumno()
         printf("Reingrese una nota valida: ");
         scanf("%d",&miAlumno.notas);
     }
-    fflush(stdin);
 
     printf("Ingrese la altura: "); //validar solo numeros
     scanf("%f",&miAlumno.alturas);
-     /* miAlumno.alturas=isdigit(miAlumno.alturas);  //GUARDA DOS VECES
+    miAlumno.alturas=isdigit(miAlumno.alturas);  //GUARDA DOS VECES
     if(miAlumno.alturas==0)
     {
         printf("Ingrese una altura valida: ");
         scanf("%f",&miAlumno.alturas);
         miAlumno.alturas=isdigit(miAlumno.alturas);
-    }*/
+    }
     fflush(stdin);
 
      printf("Ingrese sexo. F o M");
     scanf("%c",&miAlumno.sexo);
-   // miAlumno.sexo=toupper(miAlumno.sexo);
-    if(miAlumno.sexo !='M' || miAlumno.sexo !='F')
+    miAlumno.sexo=toupper(miAlumno.sexo);
+    while(miAlumno.sexo!='F' && miAlumno.sexo!='M')
     {
-        printf("Reingrese un sexo valido");
-    scanf("%c",&miAlumno.sexo);
-   // miAlumno.sexo=toupper(miAlumno.sexo);
-    }
-    fflush(stdin);
+        printf("Reingrese un sexo valido: ");
+        scanf("%c",&miAlumno.sexo);
+        miAlumno.sexo=toupper(miAlumno.sexo);
+        }
+        fflush(stdin);
 
     return miAlumno;
 }
 
 void mostrarUnAlumno(sAlumno unAlumno)
 {
-    printf("%4d %20s %2f %5d\n",unAlumno.legajos,unAlumno.nombres,unAlumno.alturas,unAlumno.notas);
+    printf("%4d %20s %2f %5d %5c\n",unAlumno.legajos,unAlumno.nombres,unAlumno.alturas,unAlumno.notas,unAlumno.sexo);
 }
 
 void cargarAlumnos(sAlumno listado[],int tam)
@@ -81,7 +80,7 @@ void mostrarAlumnos(sAlumno listado[],int tam)
 {
     int i;
 
-    printf("%4s %20s %2s %5s\n","Legajo","Nombre","Altura","Nota");
+    printf("%4s %20s %2s %5s %5s\n","Legajo","Nombre","Altura","Nota","Sexo");
 
     for(i=0; i<tam; i++)
     {
@@ -97,7 +96,7 @@ void ordenarAlfabeticamente(sAlumno listado[],int tam)
 
     sAlumno auxAlumno;
 
-    printf("%4s %20s %2s %5s\n","Legajo","Nombre","Altura","Nota");
+    printf("%4s %20s %2s %5s %5s\n","Legajo","Nombre","Altura","Nota","Sexo");
 
     for(i=0; i<tam-1; i++)
     {
@@ -121,7 +120,7 @@ void ordenarAlfabeticamente(sAlumno listado[],int tam)
 void alumnosAprobados (sAlumno listas[],int tam)
 {
     int i;
-    printf("%4s %20s %2s %5s\n","Legajo","Nombre","Altura","Nota");
+    printf("%4s %20s %2s %5s %5s\n","Legajo","Nombre","Altura","Nota","Sexo");
     for (i=0; i<tam; i++)
     {
         if(listas[i].notas>=6)
@@ -136,7 +135,7 @@ void alumnosDesaprobados(sAlumno listas[],int tam)
 {
     int i;
 
-    printf("%4s %20s %2s %5s\n","Legajo","Nombre","Altura","Nota");
+    printf("%4s %20s %2s %5s %5s\n","Legajo","Nombre","Altura","Nota","Sexo");
 
     for(i=0; i<tam; i++)
     {
@@ -155,7 +154,7 @@ void alumnoLlamadoJuan(sAlumno listas[],int tam)
     int i;
     int contadorJuan=0;
 
-    printf("%4s %20s %2s %5s\n","Legajo","Nombre","Altura","Nota");
+    printf("%4s %20s %2s %5s %5s\n","Legajo","Nombre","Altura","Nota","Sexo");
     for (i=0; i<tam; i++)
     {
         //scanf("%s",listas[i].nombres);
@@ -174,7 +173,7 @@ void alumnoLlamadoJuan(sAlumno listas[],int tam)
 void validarNombreConP(sAlumno listas[],int tam)
 {
     int alumnosConP=0;
-    printf("%4s %20s %2s %5s\n","Legajo","Nombre","Altura","Nota");
+    printf("%4s %20s %2s %5s %5s\n","Legajo","Nombre","Altura","Nota","Sexo");
     for(int i=0; i<tam; i++)
     {
         if(listas[i].nombres[0]=='p' || listas[i].nombres[0]=='P' )
@@ -192,7 +191,7 @@ void notasMaximas(sAlumno listas[], int tam)
 {
     int maxNota=0;
     int i;
-    printf("%4s %20s %2s %5s\n","Legajo","Nombre","Altura","Nota");
+    printf("%4s %20s %2s %5s %5s\n","Legajo","Nombre","Altura","Nota","Sexo");
     for(i = 0; i < tam; i++)
     {
         if (i==0)
@@ -217,7 +216,7 @@ void notasMaximas(sAlumno listas[], int tam)
 void alumnoMasMediocre(sAlumno listas[], int tam)
 {
     int i;
-    printf("%4s %20s %2s %5s\n","Legajo","Nombre","Altura","Nota");
+    printf("%4s %20s %2s %5s %5s\n","Legajo","Nombre","Altura","Nota","Sexo");
 
     for(i=0; i<tam; i++)
     {
@@ -333,3 +332,28 @@ int cargarLibre(sAlumno listas[],int tam)
     return retorno;
 }
 
+void ordenarPorSexo(sAlumno listas[],int tam)
+ {
+     int i;
+     int j;
+     sAlumno auxSexo;
+
+      printf("%4s %20s %2s %5s %5s\n","Legajo","Nombre","Altura","Nota","Sexo");
+
+     for(i=0;i<tam-1;i++)
+     {
+         for(j=i+1;j<tam;j++)
+         {
+             if(listas[i].sexo,listas[j].sexo>0)
+             {
+               auxSexo = listas[i];
+               listas[i] = listas[j];
+               listas[j] = auxSexo;
+             }
+         }
+     }
+     for(i=0; i<tam; i++)
+            {
+        mostrarUnAlumno(listas[i]);
+            }
+ }

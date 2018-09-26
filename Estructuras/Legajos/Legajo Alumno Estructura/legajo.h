@@ -27,14 +27,15 @@ void alumnoLlamadoJuan(sAlumno[],int);
 void validarNombreConP(sAlumno[],int);
 void notasMaximas(sAlumno[],int);
 void alumnoMasMediocre(sAlumno[],int);
-void alumnosMinimoPromedio(sAlumno[],int);
-void alumnosMaximoPromedio(sAlumno[],int);
-void porcentAlumAprobDesap(sAlumno[],int);
-void alumnosPromSeis(sAlumno[],int);
 //GRAFICO
 void modificarListado(sAlumno[],int);
 void darDeBaja(sAlumno[],int);
 int buscarLibre(sAlumno[],int);
 int cargarLibre(sAlumno[],int);
+void calcularPromedio(sAlumno[],int);
+void porcentDesaprobAprobados(sAlumno[],int);
+void promedioSeis(sAlumno[],int);
+void maximoPromedio(sAlumno[],int);
+void minimoPromedio(sAlumno[],int);
 
 #endif // legajo

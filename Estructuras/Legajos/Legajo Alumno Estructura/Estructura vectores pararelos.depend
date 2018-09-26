@@ -31,7 +31,7 @@
 	<conio.h>
 	"legajo.h"
 
-1537915494 source:c:\users\mirta\desktop\sss\estructuras\legajos\legajo alumno estructura\main.c
+1537917604 source:c:\users\mirta\desktop\sss\estructuras\legajos\legajo alumno estructura\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -39,5 +39,13 @@
 	<ctype.h>
 	"legajo.h"
 
-1537915504 c:\users\mirta\desktop\sss\estructuras\legajos\legajo alumno estructura\legajo.h
+1537919983 c:\users\mirta\desktop\sss\estructuras\legajos\legajo alumno estructura\legajo.h
+
+1537920051 source:c:\users\mirta\desktop\sss\estructuras\legajos\legajo alumno estructura\legajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"legajo.h"
 

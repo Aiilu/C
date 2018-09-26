@@ -24,15 +24,15 @@ int main()
         {
         case 1:
             system("cls");
-             /* if(cargarLibre(listadoAlumnos,T)!=-1)
+              if(cargarLibre(listadoAlumnos,T)!=-1)
             {
                 printf("Carga Satisfactoria!");
             }
             else
             {
                 printf("No hay espacio!");
-            }*/
-            cargarAlumnos(listadoAlumnos,T);
+            }
+            //cargarAlumnos(listadoAlumnos,T);
             flag=1;
             break;
         case 2:
@@ -90,7 +90,7 @@ int main()
             system("cls");
             if(flag==1)
             {
-                alumnoLlamadoJuan(listadoAlumnos,T);
+                modificarListado(listadoAlumnos,T);
                 system("pause");
                 break;
             }
@@ -103,7 +103,7 @@ int main()
             system("cls");
             if(flag==1)
             {
-                validarNombreConP(listadoAlumnos,T);
+                ordenarPorSexo(listadoAlumnos,T);
                 system("pause");
                 break;
             }
@@ -116,7 +116,7 @@ int main()
             system("cls");
             if(flag==1)
             {
-                notasMaximas(listadoAlumnos,T);
+                darDeBaja(listadoAlumnos,T);
                 system("pause");
                 break;
             }
@@ -129,7 +129,6 @@ int main()
             system("cls");
             if(flag==1)
             {
-                alumnoMasMediocre(listadoAlumnos,T);
                 system("pause");
                 break;
             }
@@ -142,7 +141,6 @@ int main()
             system("cls");
             if(flag==1)
             {
-                modificarListado(listadoAlumnos,T);
                 system("pause");
                 break;
             }
@@ -155,7 +153,8 @@ int main()
         case 11:
             if(flag==1)
             {
-            darDeBaja(listadoAlumnos,T);
+            ordenarPorSexo(listadoAlumnos,T);
+            system("pause");
             }
             else{
                 printf("Primero debe cargar los datos\n");
