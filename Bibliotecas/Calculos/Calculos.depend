@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1537994220 source:c:\users\mirta\desktop\programacion\bibliotecas\calculos\calculos.c
+	<stdio.h>
+	<stdlib.h>
+	"Calculos.h"
+
+1537994220 c:\users\mirta\desktop\programacion\bibliotecas\calculos\calculos.h
+
