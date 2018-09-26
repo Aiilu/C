@@ -357,3 +357,165 @@ void ordenarPorSexo(sAlumno listas[],int tam)
         mostrarUnAlumno(listas[i]);
             }
  }
+
+
+void menuOpcion(sAlumno listas[],int tam)
+{
+ int opcion;
+    int flag=0;
+
+    do
+    {
+        system("cls");
+        printf("1. Cargar alumnos\n2. Mostrar alumnos\n3. Ordenar alumnos alfabeticamente\n4. Mostrar alumnos aprobados\n5. Mostrar alumnos desaprobados\n6. Alumnos llamados Juan\n7. Alumnos con P\n8. Notas maximas\n9. Alumno mas Mediocre\n10. Modificar nota a partir de legajo\n");
+        printf("Ingrese una opcion: ");
+        scanf("%d",&opcion);
+
+        switch(opcion)
+        {
+        case 1:
+            system("cls");
+              if(cargarLibre(listas,tam)!=-1)
+            {
+                printf("Carga Satisfactoria!");
+            }
+            else
+            {
+                printf("No hay espacio!");
+            }
+            //cargarAlumnos(listas,T);
+            flag=1;
+            break;
+        case 2:
+            system("cls");
+            if(flag==1)
+            {
+                mostrarAlumnos(listas,tam);
+                system("pause");
+                break;
+            }
+            else
+            {
+                printf("Primero debe cargar los datos \n");
+            }
+        case 3:
+            system("cls");
+            if(flag==1)
+            {
+                ordenarAlfabeticamente(listas,tam);
+                break;
+            }
+            else
+            {
+                printf("Primero debe cargar los datos \n");
+                system("pause");
+                break;
+            }
+        case 4:
+            system("cls");
+            if(flag==1)
+            {
+                alumnosAprobados(listas,tam);
+                system("pause");
+                break;
+            }
+            else
+            {
+                printf("Primero debe cargar los datos \n");
+                break;
+            }
+        case 5:
+            system("cls");
+            if(flag==1)
+            {
+                alumnosDesaprobados(listas,tam);
+                system("pause");
+                break;
+            }
+            else
+            {
+                printf("Primero debe cargar los datos \n");
+                break;
+            }
+        case 6:
+            system("cls");
+            if(flag==1)
+            {
+                modificarListado(listas,tam);
+                system("pause");
+                break;
+            }
+            else
+            {
+                printf("Primero debe cargar los datos \n");
+                break;
+            }
+        case 7:
+            system("cls");
+            if(flag==1)
+            {
+                ordenarPorSexo(listas,tam);
+                system("pause");
+                break;
+            }
+            else
+            {
+                printf("Primero debe cargar los datos \n");
+                break;
+            }
+        case 8:
+            system("cls");
+            if(flag==1)
+            {
+                darDeBaja(listas,tam);
+                system("pause");
+                break;
+            }
+            else
+            {
+                printf("Primero debe cargar los datos \n");
+                break;
+            }
+        case  9:
+            system("cls");
+            if(flag==1)
+            {
+                system("pause");
+                break;
+            }
+            else
+            {
+                printf("Primero debe cargar los datos \n");
+                break;
+            }
+        case 10:
+            system("cls");
+            if(flag==1)
+            {
+                system("pause");
+                break;
+            }
+            else
+            {
+                printf("Primero debe cargar los datos \n");
+                break;
+            }
+
+        case 11:
+            if(flag==1)
+            {
+            ordenarPorSexo(listas,tam);
+            system("pause");
+            }
+            else{
+                printf("Primero debe cargar los datos\n");
+            }
+            break;
+        case 12:
+            break;
+        default:
+            printf("No existe esta opcion");
+        }
+    }
+    while(opcion!=12);
+}

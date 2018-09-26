@@ -14,7 +14,7 @@ typedef struct
     float promedio;
 } sAlumno;
 
-void menuOpcion(sAlumno[]);
+void menuOpcion(sAlumno[],int);
 sAlumno cargarUnAlumno();
 void mostrarUnAlumno(sAlumno);
 void cargarAlumnos(sAlumno[],int);
