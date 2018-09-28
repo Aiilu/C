@@ -1,9 +1,77 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
 #include <ctype.h>
 #include "legajo.h"
+#define VACIO -1
+#define LLENO 1
+#define BAJA 0
+
+/*void inicializarAlumnos(sAlumno listado[i], int tam)
+{
+float promedio[3]={5,9,7};
+int legajo[3]={1,2,3};
+char nombre[3][35]={"Juan","Maria","Luis"};
+int edad[3]= {18,26,47};
+
+int i;
+for(i=0;i<3;i++)
+{
+    listado[i].legajo=legajo[i];
+    listado[i].promedio=promedio[i];
+    listado[i].edad=edad[i];
+    strcpy(listado[i].nombres,nombre[i]);
+    listado[i].estado=OCUPADO;
+}
+
+}*/
+
+void cargarIlogico(sAlumno listado[], int tam)
+{
+    int i;
+    for (i=0; i<tam; i++)
+    {
+        listado[i].estado=VACIO;
+    }
+}
+
+int buscarLibre(sAlumno listas[],int tam)
+ {
+ int index = -1;
+ int i;
+    for(i=0; i<tam; i++)
+    {
+        if(listas[i].estado==VACIO)
+        {
+            index = i;
+            break;
+        }
+    }
+    return index;
+}
+
+int cargarLibre(sAlumno listas[],int tam)
+{
+    int bandera;
+
+    bandera = buscarLibre(listas,tam); //buscra lib me dice donde, lo guard en bamde
+    if(bandera!=VACIO)
+    {
+        listas[bandera] = cargarUnAlumno();
+        listas[bandera].estado = LLENO;
+
+    return bandera;
+    }
+    else
+    {
+        printf("No hay espacio");
+    }
+
+    return 0;
+}
+
 
 sAlumno cargarUnAlumno()
 {
@@ -20,11 +88,11 @@ sAlumno cargarUnAlumno()
 
     printf("Ingrese nombre: ");
     scanf("%s",miAlumno.nombres);
-    if((miAlumno.nombres < 'a' || miAlumno.nombres > 'z' ) && (miAlumno.nombres > 'A' || miAlumno.nombres<'Z'))
+ /*   if((miAlumno.nombres<'a' || miAlumno.nombres>'z' ) && (miAlumno.nombres<'A' || miAlumno.nombres>'Z'))
     {
         printf("Reingese un nombre valido: ");
         scanf("%s",miAlumno.nombres);
-    }
+    }*/
     fflush(stdin);
 
     printf("Ingrese la nota: ");
@@ -84,8 +152,11 @@ void mostrarAlumnos(sAlumno listado[],int tam)
 
     for(i=0; i<tam; i++)
     {
+        if(listado[i].estado==LLENO)
+    {
         mostrarUnAlumno(listado[i]);
     }
+}
 }
 
 void ordenarAlfabeticamente(sAlumno listado[],int tam)
@@ -284,7 +355,7 @@ void darDeBaja(sAlumno listas[],int tam)
             opcion=getch();
             if(opcion == 's')
             {
-                listas[i].estado= BAJA;
+                listas[i].estado = BAJA;
                 printf("\n\nAlumno borrado!");
                 cargo =1;
             }
@@ -296,41 +367,6 @@ void darDeBaja(sAlumno listas[],int tam)
     }
 }
 
-int buscarLibre(sAlumno listas[],int tam)
- {
- int index = -1;
- int i;
-    for(i=0; i<tam; i++)
-    {
-        if(listas[i].estado==VACIO)
-        {
-            index = i;
-            break;
-        }
-    }
-    return index;
-}
-
-int cargarLibre(sAlumno listas[],int tam)
-{
-    int bandera;
-    int retorno=0;
-
-    bandera = buscarLibre(listas,tam); //buscra lib me dice donde, lo guard en bamde
-    if(bandera!=VACIO)
-    {
-        listas[bandera] = cargarUnAlumno();
-        listas[bandera].estado = LLENO;
-
-     return 1;
-    }
-
-    else
-    {
-        printf("No hay espacio");
-    }
-    return retorno;
-}
 
 void ordenarPorSexo(sAlumno listas[],int tam)
  {
@@ -344,7 +380,7 @@ void ordenarPorSexo(sAlumno listas[],int tam)
      {
          for(j=i+1;j<tam;j++)
          {
-             if(listas[i].sexo,listas[j].sexo>0)
+             if(listas[i].sexo-listas[j].sexo>0)
              {
                auxSexo = listas[i];
                listas[i] = listas[j];
@@ -375,15 +411,15 @@ void menuOpcion(sAlumno listas[],int tam)
         {
         case 1:
             system("cls");
-              if(cargarLibre(listas,tam)!=-1)
+        /*if(cargarLibre(listas,tam)!=-1)
             {
                 printf("Carga Satisfactoria!");
             }
             else
             {
                 printf("No hay espacio!");
-            }
-            //cargarAlumnos(listas,T);
+            }*/
+            cargarAlumnos(listas,tam);
             flag=1;
             break;
         case 2:
@@ -519,3 +555,4 @@ void menuOpcion(sAlumno listas[],int tam)
     }
     while(opcion!=12);
 }
+

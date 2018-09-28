@@ -9,7 +9,7 @@
 int main()
 {
     sAlumno listadoAlumnos[T];
-
+    cargarIlogico(listadoAlumnos,T);
     menuOpcion(listadoAlumnos,T);
 
     return 0;
