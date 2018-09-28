@@ -88,11 +88,12 @@ sAlumno cargarUnAlumno()
 
     printf("Ingrese nombre: ");
     scanf("%s",miAlumno.nombres);
- /*   if((miAlumno.nombres<'a' || miAlumno.nombres>'z' ) && (miAlumno.nombres<'A' || miAlumno.nombres>'Z'))
+    int i=0;
+    while((miAlumno[i].nombres<'a' || miAlumno[i].nombres>'z' ) && (miAlumno[i].nombres<'A' || miAlumno[i].nombres>'Z'))
     {
         printf("Reingese un nombre valido: ");
         scanf("%s",miAlumno.nombres);
-    }*/
+    }
     fflush(stdin);
 
     printf("Ingrese la nota: ");
@@ -140,7 +141,7 @@ void cargarAlumnos(sAlumno listado[],int tam)
     for(i=0; i<tam; i++)
     {
 
-        listado[i] = cargarUnAlumno();
+        listado(miAlumno.nombres<'a' || miAlumno.nombres>'z' ) && (miAlumno.nombres<'A' || miAlumno.nombres>'Z') = cargarUnAlumno();
     }
 }
 
