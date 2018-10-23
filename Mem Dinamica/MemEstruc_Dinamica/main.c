@@ -1,68 +1,78 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct
-{
-    int codigo;
-    char marca[20];
-    int capacidad;
-    float precio;
-
-}ePendrive;
-
-int cargarPendrive(ePendrive*);
-void mostrarPendrive(ePendrive*);
-
 int main()
 {
-    ePendrive miPendrive;
+    int* vec;
+    int* aux;
+    int i;
 
-    ePendrive* pen1 = newPendrive();
+         vec = (int*)   malloc(sizeof(int)* 5);
 
-    if(cargarPendrive(&miPendrive))
-    {
-    mostrarPendrive(&miPendrive);
-    }
+         if(vec == NULL){
+
+            printf("No se consiguio memoria\n");
+            exit(1);
+         }
+
+        for(i=0; i < 5; i++){
+              printf("Ingrese un numero: ");
+              scanf("%d", vec + i);
+
+        }
+
+
+           for(i=0; i < 5; i++){
+              printf("%d ", *(vec + i));
+
+
+        }
+
+       printf("\n\n");
+
+
+      aux =  (int*) realloc( vec, sizeof(int)*10);
+
+      if( aux != NULL){
+        vec = aux;
+
+         for(i=5; i < 10; i++){
+         printf("Ingrese un numero: ");
+        scanf("%d", vec + i);
+
+      }
+
+
+      for(i=0; i < 10; i++){
+              printf("%d ", *(vec + i));
+
+
+        }
+
+      vec = (int*) realloc(vec, sizeof(int)* 5);
+
+  printf("\n\n");
+
+       for(i=0; i < 10; i++){
+              printf("%d ", *(vec + i));
+
+
+        }
+
+  printf("\n\n");
+
+
+      }
+      else{
+      printf("No se pudo agrandar el array\n");
+
+      }
+
+
+
+         free(vec);
+
+
 
     return 0;
-}
-
-int cargarPendrive(ePendrive* pen)
-{
-    int todoOk = 0;
-
-    if(pen !=NULL)
-    {
-
-    printf("\nIngrese codigo de Pendrive: ");
-    scanf("%d",&pen->codigo);
-
-    printf("\nIngrese la marca: ");
-    fflush(stdin);
-    gets(pen->marca);
-
-    printf("\nIngrese su capacidad: ");
-    scanf("%d",&pen->capacidad);
-
-    printf("\nIngrese el precio: ");
-    scanf("%f",&pen->precio);
-
-    todoOk = 1;
-    }
-
-    return todoOk;
-}
-
-void mostrarPendrive(ePendrive* pen)
-{
-   /*printf("\nCodigo pendrive: %d", pen->codigo);
-   printf("\nMarca del pendrive: %s", pen->marca);
-   printf("\nCapacidad del pendrive: %d", pen->capacidad);
-   printf("\nPrecio del pendrive: %.2f", pen->precio);*/
-
-   if(pen !=NULL)
-   {
-
-   printf("%d %s %d %.2f", pen->codigo, pen->marca, pen->capacidad, pen->precio);
-   }
 }

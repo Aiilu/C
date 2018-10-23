@@ -5,18 +5,14 @@ int main()
 {
    int* pNumero;
 
-   pNumero = (int*) malloc(sizeof(int)*5);
+   pNumero = (int*) malloc(sizeof(int));
 
    if(pNumero == NULL)
    {
        printf("No se consiguio memoria");
        exit(1);
    }
-   int i;
-   for(i=0;i<5;i++)
-   {
 
-   }
    *pNumero = 5;
 
    printf("%d\n", *pNumero);
