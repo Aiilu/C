@@ -15,14 +15,14 @@ int main()
             exit(1);
          }
 
-        for(i=0; i < 5; i++){
+        for(int i=0; i < 5; i++){
               printf("Ingrese un numero: ");
               scanf("%d", vec + i);
 
         }
 
 
-           for(i=0; i < 5; i++){
+           for(int i=0; i < 5; i++){
               printf("%d ", *(vec + i));
 
 
@@ -36,14 +36,14 @@ int main()
       if( aux != NULL){
         vec = aux;
 
-         for(i=5; i < 10; i++){
+         for(int i=5; i < 10; i++){
          printf("Ingrese un numero: ");
         scanf("%d", vec + i);
 
       }
 
 
-      for(i=0; i < 10; i++){
+      for(int i=0; i < 10; i++){
               printf("%d ", *(vec + i));
 
 
@@ -53,7 +53,7 @@ int main()
 
   printf("\n\n");
 
-       for(i=0; i < 10; i++){
+       for(int i=0; i < 10; i++){
               printf("%d ", *(vec + i));
 
 
