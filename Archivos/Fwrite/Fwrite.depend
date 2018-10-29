@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1540769242 source:c:\users\pc\desktop\parcial\fwrite\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
