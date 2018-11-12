@@ -1,0 +1,196 @@
+
+void mostrarJuegos(eJuego j[], int tam)
+
+int i;
+
+system("cls");
+printf("ALO");
+printf("\n\nCODIGO\t\tNOMBRE\t\t\tIMPORTE\t\tCATEGORIA\n\n");
+
+for(i=0;i<tam;i++)
+{
+   mostrarJuego(j[i]);
+}
+
+}
+
+void mostrarJuego(eJuego j)
+{
+printf(" %d  %10s  %d  %d  %10s\n",j.codigo, j.descripcion, j.importe, j.idCategoria);
+}
+
+int buscarCodigoJuego(eJuego j[], int tam, int cod)
+{
+    int indice = -1;
+    int i;
+	
+    for(i=0; i<tam; i++)
+    {
+
+        if( j[i].codigo == cod && j[i].isEmpty == 0)
+        {
+            indice = i;
+            break;
+        }
+    }
+    return indice;
+}
+
+void altaAlquiler(eAlquileres* a, int tama, eJuego j[], int tamj, eCliente c[], int tamc, eCategoria ca[], int tamca, int* pId, int idCodigo)
+{
+    int idAlquiler = *pId;
+    int idCliente;
+    int idCategoria;
+	int idJuego;
+    eFecha fecha;
+    eAlquileres nuevoAlquiler;
+    int indice;
+
+    indice = buscarLibreAlquiler(a, tama);
+
+    if(indice == -1)
+    {
+        printf("No se pueden cargar mas alquileres\n\n");
+    }
+    else
+    {
+        nuevoAlquiler.codAlquiler = idAlquiler;
+
+        mostrarClientes(c,tamc);
+
+        printf("Ingrese el cliente: ");
+        fflush(stdin);
+        scanf("%d", &idCliente);
+
+        while(idCliente>idCodigo)
+        {
+        printf("Ingrese nuevamente: ");
+        fflush(stdin);
+        scanf("%d", &idCliente);
+        }
+
+        nuevoAlquiler.codCliente = idCliente;
+
+        listarCategorias(ca,tamca);
+        printf("Ingrese categoria: ");
+        scanf("%d", &idCategoria);
+		
+		mostrarJuegos(j,tamj);
+		printf("Ingrese el codigo del juego");
+		scanf("%d", &idJuego);
+		
+		if(buscarCodigoJuego(j,tamj,idJuego)==-1)
+		{
+		    printf("Error, el juego ingresado no es valido.\n");
+                system("pause");
+		}
+        else{
+		
+		nuevoAlquiler.codJuego = idJuego;
+}		
+        //listarJuegos(j,tamj,c);
+        //printf("Ingrese el juego: ");
+        //scanf("%d", &idJuego);
+        //nuevoAlquiler.codJuego = idJuego;
+
+        printf("\nIngrese dia: ");
+        scanf("%d", &fecha.dia);
+
+        printf("Ingrese mes: ");
+        scanf("%d", &fecha.mes);
+
+        printf("Ingrese anio: ");
+        scanf("%d", &fecha.anio);
+
+        nuevoAlquiler.fecha = fecha;
+
+        nuevoAlquiler.isEmpty = 0;
+
+        a[indice] = nuevoAlquiler;
+
+        *pId = idAlquiler + 1;
+    }
+}
+
+void listarAlquileres(eAlquiler list[], int len)
+{
+
+    eAlquiler aux;
+    if(len > 0 && list != NULL)
+    {
+
+            for(int i = 0; i < len - 1; i++)
+            {
+                for(int j = i + 1; j < len; j++)
+                {
+                    if((list[j].codigoAlquiler > list[i].codigoAlquiler) && list[j].isEmpty == 0 && list[i].isEmpty == 0)
+                    {
+                        aux = list[i];
+                        list[i] = list[j];
+                        list[j] = aux;
+                    }
+
+                }
+            }
+
+
+
+    }
+
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+HAGO LA FUNCION DE CARGAR Y MOSTRAR??? JUEGOS Y CATEGORIAS
+
+void pedirCategoriayMostrarJuegos(eCategoria c[], int tamc, eJuego j[], int tamj)
+{
+    int catg;
+	int i;
+	int j;
+    int flagExisteCatg = 0;
+    int flagExisteJuego = 0;
+
+    mostrarCategorias(vCat, tamc);
+
+    fflush(stdin);
+    printf("\nElija un ID de Categoria ");
+    scanf("%d", &catg);
+
+    for(i=0; i < tamc; i++)
+    {
+        if(c[i].id == catg)
+        {
+            flagExisteCatg = 1;
+            fflush(stdin);
+
+            for(j = 0; j < tamj; j++)
+            {
+                if(j[j].idCategoria == catg)
+                {
+                    fflush(stdin);
+                    if(flagExisteJuego == 0)
+                    {
+                        printf("\n--------------------JUEGOS---------------------\n");
+                        printf("\nID            Descripcion             Categoria\n");
+                    }
+                    flagExisteJuego = 1;
+                    printf("%4d %20s %20s\n", j[j].id, j[j].nombre, c[i].nombre);
+                }
+            }
+
+            if(flagExisteJuego == 0)
+            {
+                printf("No existen Juegos para la Categoria %s\n", c[i].nombre);
+            }
+        }
+    }
+
+    if(flagExisteCatg == 0)
+    {
+        printf("No existen Categorias con el ID %d\n", catg);
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
