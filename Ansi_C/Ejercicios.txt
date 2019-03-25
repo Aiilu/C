@@ -1,0 +1,711 @@
+EJERCICIO 40 CON FUNCIONES
+void ingresarDatos();
+void evaludarDias();
+void sacarPromedio();
+int main()
+{
+    int dias [30];
+    int Lluvia;
+    int i;
+    int contador;
+    int mayor ;
+    int menor ;
+    int diaMayor ;
+    int diaMenor ;
+    int promedio ;
+    int acumulador ;
+
+    ingresarDatos(i,contador,dias);
+    printf("\n%d", mayor);
+    printf("\n%d",menor);
+    printf("\n%d",diaMayor);
+    printf("\n%d",diaMenor);
+
+    evaludarDias(i, dias, mayor, diaMayor, menor, diaMenor);
+    sacarPromedio(i,dias,acumulador);
+    promedio = acumulador / 30;
+    printf("\nla mayor cantidad de lluvia en un dia fue de : %d mm", mayor);
+    printf("\nLa menor cantidad de lluvia en un dia fue: %d mm", menor);
+    printf("\nEL dia que mas llovio fue: %d", diaMayor);
+    printf("\nEl dia que menos llovio fue: %d",diaMenor);
+    printf("\n el promedio de lluvia caida fue de: %d",promedio);
+
+    return 0;
+}
+void ingresarDatos (int i,int contador, int dias[]){
+    for (i=0 ; i<= 30 ; i++){
+        printf("\nIngrese la cantidad de lluvia en mm que callo el dia %d : ", i+1);
+        scanf("%d", &dias[i]);
+    }
+}
+void evaludarDias(int j, int dia[], int ma, int diaMa, int me, int diaMe){
+     ma = 0;
+     me = 999;
+     diaMa = 0;
+     diaMe = 0;
+    for (j=0 ; j<30 ; j ++){
+
+        if ( dia[j] > ma ){
+            diaMa = j+1;
+            ma = dia[j];
+            }
+    }
+    for ( j=0 ; j<30 ; j++){
+        if (dia[j]< me){
+            diaMe = j+1;
+            me = dia[j];
+            }
+    }
+}
+void sacarPromedio(int i, int dias[], int acumulador){
+    acumulador = 0;
+       for ( i = 0; i < 30 ; i ++){
+        acumulador = dias[i] + acumulador;
+    }
+}
+
+---------------------------------------------------------------------------------
+EJERCICIO 40
+
+int main()
+{
+    int dias [30];
+    int Lluvia;
+    int i;
+    int contador = 0;
+    int mayor = 0;
+    int menor = 9999;
+    int diaMayor;
+    int diaMenor;
+    int promedio = 0;
+    int acumulador = 0;
+
+    for (i=0 ; i<= 30 ; i++){
+        printf("\nIngrese la cantidad de lluvia en mm que callo el dia %d : ", i+1);
+        scanf("%d", &Lluvia);
+        dias [i] = Lluvia;
+        contador ++;
+
+    }
+    for (i=0 ; i<=30 ; i ++){
+
+        if ( dias[i] > mayor ){
+            diaMayor = i+1;
+            mayor = dias[i];
+        }
+    }
+    for ( i=0 ; i<=30 ; i++){
+
+        if (dias[i]< menor){
+            diaMenor = i+1;
+            menor = dias[i];
+
+        }
+    }
+    for ( i = 0; i <= 30 ; i ++){
+
+        acumulador = dias[i] + acumulador;
+
+        }
+
+    promedio = acumulador / 31;
+    printf("\nla mayor cantidad de lluvia en un dia fue de : %d mm", mayor);
+    printf("\nLa menor cantidad de lluvia en un dia fue: %d mm", menor);
+    printf("\nEL dia que mas llovio fue: %d", diaMayor);
+    printf("\nEl dia que menos llovio fue: %d",diaMenor);
+    printf("\n el promedio de lluvia caida fue de: %d",promedio);
+
+    return 0;
+}
+
+-------------------------------------------------------------------------------------------------
+EJERCICIO 42 CON FUNCIONES
+
+#define elementos 4
+/*De los alumnos de una escuela se registran su apellido, nombre y altura.Diseñar un programa que indique
+el nombre del alumno mas alto y su altura
+*/
+void ingresarDatos();
+void buscarAltura();
+void resultados();
+char nombre [elementos][20];
+char apellido[elementos][30];
+float altura[elementos];
+int posicion;
+float alturaMayor;
+int main()
+{
+    ingresarDatos(nombre, apellido, altura);
+    buscarAltura(nombre, apellido, altura);
+    resultados(nombre, apellido, altura);
+    return 0;
+}
+
+void buscarAltura(char nombre[elementos][20],char apellido[elementos][30],float altura[elementos],int posicion){
+    int i;
+    for ( i = 0; i < 5; i++){
+        if ( altura[i] > 0){
+            if (altura[i] > altura[i-1]){
+                alturaMayor = altura[i];
+                posicion = i;
+            }
+        }
+    }
+}
+
+void resultados(char nombre[elementos][20],char apellido[elementos][30],float altura[elementos],int posicion){
+    printf("\nEl alumno con mayor altura es:%s %s.\nCon una altura de: %2.f ", nombre[posicion], apellido[posicion], altura[posicion]);
+}
+
+--------------------------------------------------------------------------------------------------------------
+EJERCICIO 42
+
+int main()
+{
+    char nombre [4][20];
+    char apellido[4][30];
+    float altura[4];
+    int i;
+    int posicion;
+    float alturaMayor;
+
+    for ( i = 0 ;i < 5 ; i++ ){
+        system("cls");
+        printf("\nIngrese el nombre del alumno: ");
+        fflush(stdin);
+        gets(nombre[i]);
+
+        printf("\nIngrese el apellido del alumno: ");
+        fflush(stdin);
+        gets(apellido[i]);
+
+        printf("\nIngrese la altura del alumno: ");
+        scanf("%f", &altura[i]);
+    }
+    for ( i = 0; i < 5; i++){
+        if ( altura[i] > 0){
+            if (altura[i] > altura[i-1]){
+                alturaMayor = altura[i];
+                posicion = i;
+            }
+        }
+    }
+
+    printf("\nEl alumno con mayor altura es:%s %s.\nCon una altura de: %2.f ", nombre[posicion], apellido[posicion], altura[posicion]);
+
+    return 0;
+}
+
+-------------------------------------------------------------------------------------------------------
+EJERCICIO 48
+
+
+typedef struct eEmpleados {
+char nombre[30];
+char apellido[30];
+int salario;
+int horas;
+int legajo;
+}eEmpleados;
+
+#define elementos 100
+/*
+Escribe un programa que calcule el salario semanal de cada trabajador de una empresa dada la tarifa horaria
+y el numero de horas trabajadas ademas del nombre(dependiendo el dia, los trabajadores ganan mas o menos). Se debe preguntar al usuario cuando dejar de ingresar datos.
+Ademas al final tambien informar la cantidad de salarios calculados y cual es el salario de cada uno de los
+empelados. */
+
+int main()
+{
+    int opcion;
+    struct eEmpleados empleados[elementos];
+    int i = 0;
+    int empleadosRegistrados = 1;
+    char seguir;
+    int legajo;
+    do{
+        system("cls");
+        opcion = menu(opcion);
+    switch(opcion){
+        case 1:
+            for ( i = 0; i <= empleadosRegistrados; i++)
+                {
+                    ingresarEmpleado(empleados[i].nombre, empleados[i].apellido, empleados[i].salario);
+                    empleados[i].legajo = empleadosRegistrados;
+                    printf("\nIngrese el sueldo por hora del empleado: ");
+                    scanf("%d",  &empleados[i].salario);
+                    imprimirDatosIngresados(empleados[i].nombre, empleados[i].apellido, empleados[i].salario, empleados[i].legajo);
+
+                    printf("\n\nSi desea agregar otro empleado precion 'S', para salir al menu precione otra tecla: ");
+                    fflush(stdin);
+                    scanf("%c",  &seguir);
+                    if(seguir == 'S' || seguir == 's')
+                        {
+                            empleadosRegistrados ++;
+                        }
+                    else
+                        {
+                            break;
+                        }
+                }
+            break;
+        case 2:
+            printf("\nIngrese el numero de legajo del empleado el cual quiere modificar sus datos: ");
+            scanf("%d", &legajo);
+            modificarDatos(empleados[legajo].legajo,empleados[legajo].nombre, empleados[legajo].apellido, empleados[legajo].salario,legajo);
+            printf("\nLos datos se han modificado de la siquiente manera: ");
+            imprimirDatosIngresados(empleados[legajo].nombre, empleados[legajo].apellido, empleados[legajo].salario, empleados[legajo].legajo);
+            break;
+        case 3:
+ //           eliminarEmpleado();
+            break;
+        case 4:
+//            calcularHoras();
+            break;
+
+        }
+    }while (opcion != 5);
+    return 0;
+}
+
+int  menu(int numero){
+
+    system("color 3e");
+    printf("*****\tBienbvenido al programa de actualizacion de empleados.\t*****");
+    printf("\n");
+    printf("\n*****\tIngrese una de las siquientes opciones: \t\t*****");
+    printf("\n");
+    printf("\n*****\t1. Ingrese un nuevo empleado.\t\t\t\t*****");
+    printf("\n");
+    printf("\n*****\t2. Modifique los datos de uno de los empleados.\t\t*****");
+    printf("\n");
+    printf("\n*****\t3. Elimine uno de los empleados.\t\t\t*****");
+    printf("\n");
+    printf("\n*****\t4. Calcular horas trabajadas.   \t\t\t*****");
+    printf("\n");
+    printf("\n*****\t5.Salir.\t\t\t\t\t\t*****");
+    printf("\n");
+
+    fflush(stdin);
+    scanf("%d", &numero);
+    getchar();
+    while ( numero != 1 && numero != 2 && numero != 3 && numero != 4 && numero != 5){
+            system("cls");
+            system("color 4f");
+            printf("\nOpcion incorrecta,por favor ingrese una opcion valida\n: ");
+            fflush(stdin);
+            scanf("%d", &numero);
+    }
+
+    system("color 3e");
+    return numero;
+ }
+ /*/******************************************************************************** */
+
+ void ingresarEmpleado(char nombre[30], char apellido[30], int salario)
+ {
+     system("cls");
+     printf("\nIngrese el nombre del empleado: ");
+     fflush(stdin);
+     gets(nombre);
+     printf("\nIngrese el Apellido del empleado: ");
+     fflush(stdin);
+     gets(apellido);
+ }
+ /* ////////////////////////////////////////////////////////////////////////////////////// */
+ void imprimirDatosIngresados(char nombre[30], char apellido[30], int salario,  int legajo)
+ {
+     system("cls");
+     printf("\n NOMBRE \t\t APELLIDO \t\t SUELDO/HORA \t LEGAJO ");
+     printf("\n %s \t\t %s \t\t %d \t %d ", nombre , apellido, salario, legajo);
+ }
+ /* ////////////////////////////////////////////////////////////////////////////////////// */
+ void modificarDatos(int legajo , char nombre[30],  char apellido[30], int salario,  int legajoInterno){
+    char seguir;
+    system("cls");
+    printf("\nIngrese N para modificar el nombre, A para modificar el apellido o S para modificar el salario: ");
+    fflush(stdin);
+    scanf("%c", &seguir);
+    toupper(seguir);
+
+    switch(seguir){
+        case 'N':
+            fflush(stdin);
+            printf("\nIngrese el nombre del empleado: ");
+            gets(nombre);
+            printf("\nNombre: %s",  nombre);
+            break;
+
+        case 'n':
+            fflush(stdin);
+            printf("\nIngrese el nombre del empleado: ");
+            gets(nombre);
+            printf("\nEl programa esta cortando aca.");
+            printf("\nNombre: %s",  nombre);
+            break;
+
+        case 'A':
+            printf("\nIngrese el apellido del empleado: ");
+            fflush(stdin);
+            gets(apellido);
+            break;
+
+        case 'a':
+            printf("\nIngrese el apellido del empleado: ");
+            fflush(stdin);
+            gets(apellido);
+            break;
+        case 'S':
+
+            printf("\nIngrese el salario por hora de el empleado: ");
+            scanf("%d", &salario);
+            break;
+
+        case 's':
+            printf("\nIngrese el salario por hora de el empleado: ");
+            scanf("%d", &salario);
+            break;
+
+        default:
+            printf("\nUsted ingreso una opcion invalida.");
+    }
+ }
+
+-----------------------------------------------------------------------------------
+
+EJERCICIO 58
+
+int main()
+{
+    int vector[5]={1,2,3,4,5};
+
+    for(int i=0; i<5; i++)
+    {
+        printf("%d\n",vector[i]);
+    }
+
+    return 0;
+}
+
+-----------------------------------------------------------------------------
+EJERCICIO 59
+
+int main()
+{
+    int vector [20] = {5,9,65,18,56,87,46,32,0,36,56,84,55,23,1,59,9,7,100,56};
+    int i;
+    int j;
+    int auxiliar;
+    for( i =  0; i < 20 ; i++)
+    {
+        for ( j = i+1 ; j <= 20 ; j++)
+        {
+
+            if ( vector [i] > vector[j])
+            {
+               auxiliar = vector[i];
+               vector[i]=vector[j];
+               vector[j]=auxiliar;
+            }
+        }
+    }
+    for ( i = 0 ; i < 20 ;  i++)
+    {
+        printf("%d \n",  vector[i]);
+    }
+
+    return 0;
+}
+
+------------------------------------------------------------------------------------
+EJERCICIO 60
+
+int main()
+{
+    int vec[5]={1,8,9,6,3};
+    int aux;
+
+    for(int i=0;i<5-1;i++)
+    {
+        aux=vec[i];
+
+        for(int j=i+1;j<5;j++)
+        {
+            if(vec[i]>vec[j])
+            {
+                aux=vec[i];
+                vec[i]=vec[j];
+                vec[j]=aux;
+
+
+            }
+
+
+        }
+
+    }
+    for(int i=0;i<5;i++)
+    {
+        printf("%d",vec[i]);
+    }
+
+    return 0;
+}
+
+--------------------------------------------------------------------------
+EJERCICIO 61
+
+int main()
+{
+    int vector [31];
+    int i;
+    int compras = 0 ;
+    char respuesta;
+
+    for ( i = 0 ;  i < 31 ;  i++)
+    {
+
+        int auxiliar = 0;
+        printf("Ustes se encuentra en el dia: %d \n",  i+1);
+        printf("Por favor ingrese el gasto al  dia correspondido:\n ");
+        scanf("%d", &compras);
+
+        do
+        {
+
+        printf("Desea agregar otro gasto? Ingrese s/n \n");
+        fflush()
+        scanf("%c",&respuesta);
+        printf("Ingrese otro gasto: %d \n");
+        scanf("%d" , &auxiliar);
+        compras = compras + auxiliar;
+        }
+        while( respuesta == "s" || respuesta == "S");
+        vector[i] =compras;
+        printf("El gasto del dia %d es de %d \n",i +1, vector[i] );
+    }
+    return 0;
+}
+
+------------------------------------------------------------------------------
+EJERCICIO 62
+
+int main()
+{
+    int vectorA[100] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100};
+    int vectorB[100] = {100,99,98,97,96,95,94,93,92,91,90,89,87,86,85,84,83,82,81,80,79,78,77,76,75,74,73,72,71,70,69,68,67,66,65,64,63,62,61,60,59,58,57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1};
+    int vectorC[100];
+    int i;
+
+    for ( i = 0 ; i < 100 ; i ++)
+    {
+        if(vectorA[i] <= vectorB[i])
+        {
+            vectorC[i] = vectorA[i];
+        }else if (vectorA[i] > vectorB[i])
+        {
+            vectorC[i] = vectorB[i];
+        }
+    }
+
+    for ( i = 0 ; i < 100 ; i ++)
+    {
+        printf("%d \n", vectorC[i]);
+    }
+    return 0;
+}
+
+--------------------------------------------------------------------------------
+EJERCICIO 64
+
+int main()
+{
+    int vector[20];
+    int i;
+    int auxiliar;
+    int j;
+
+    for ( i = 0 ; i < 20 ; i ++ )
+    {
+        printf("Ingres un valor para el vector: \n");
+        scanf("%d" ,  &vector[i]);
+        if( vector[i] == 0)
+        {
+            printf("Error , debe ingresar un unmero distinto de cero.Por favor ingrese otro numero. \n");
+            scanf("%d",&vector[i]);
+        }
+    }
+
+    for ( i = 0  ; i <  20 ; i ++)
+   {
+       printf("%d\n", vector[i]);
+   }
+
+   printf("ordenando\n");
+
+
+    if ( vector[i] > 0)
+    {
+        for ( i = 0 ; i < 20 ; i++)
+        {
+            for ( j =  i+1 ; j < 20 ; )
+            {
+                if ( vector[j] > vector[i])
+                {
+                    auxiliar = vector[j];
+                    vector[j] = vector[i];
+                    vector[i] = auxiliar;
+                }
+            }
+        }
+    }
+    else if ( vector [i] < 0)
+    {
+        for ( i = 0 ; i < 20 ;  i++ )
+        {
+            for ( j = i +1 ; j < 20 ;j ++)
+            {
+                if ( vector [j] < vector [i])
+                {
+                    auxiliar = vector[j];
+                    vector[j] = vector[i];
+                    vector[i] = auxiliar;
+                }
+            }
+        }
+    }
+
+   for ( i = 0  ; i <  20 ; i ++)
+   {
+       printf("%d\n", vector[i]);
+   }
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------
+EJERCICIO 65
+
+int len=10;
+int vector[];
+
+
+void menu();
+int cargarVector(int[], int);
+int ordenarVector(int[], int);
+int mostarVector(int[], int);
+int salir(int[],int);
+
+int main()
+
+{
+    menu();
+
+    return 0;
+}
+
+void menu()
+{
+   int opcion;
+
+    printf("**********MENU DE VECTORES**********\n");
+    printf("*ELIJA UNA OPCION PARA CONTINUAR:***\n");
+    printf("*1)CARGAR UN VECTOR.****************\n");
+    printf("*2)ORDENAR UN VECTOR.***************\n");
+    printf("*3)MOSTRAR UN VECTOR.***************\n");
+    printf("*4)SALIR.***************************\n");
+    printf("************************************\n");
+    scanf("%d",&opcion);
+
+
+    if(opcion == 1)
+    {
+        if(opcion == 1)
+        {
+
+            cargarVector();
+
+        }else
+             if(opcion == 2)
+             {
+
+                ordenarVector();
+
+             }else
+                  if(opcion == 3)
+                  {
+
+                     mostrarVector();
+
+                  }else
+                       if(opcion == 4)
+                       {
+
+                          salir();
+
+                       }else
+                        {
+                            printf("Ingreso opcion incorrecta. ");
+                        }
+        }else
+             if(opcion == 4)
+             {
+                 salir();
+             }else
+                {
+                    printf("Para seleccionar otra opcion primero debe cargar el vector.");
+                }
+
+                return 0;
+
+}
+
+int cargarVector(int vector[])
+{
+
+
+    for(int i=0; i<len; i++)
+    {
+        printf("Ingrese el %d° numero: \n", i);
+        scanf("%d", vector[i]);
+    }
+
+    return 0;
+}
+
+int ordenarVector(int vector[], int len)
+{
+   int i,j;
+   int temp;
+
+   for(i=1;i<len;i++)
+   {
+        temp = vector[i];
+        j=i-1;
+
+        while(j>=0 && temp<vector[j])
+        {
+            vector[j+1] = vector[j];
+            j--;
+        }
+
+        vector[j+1]=temp;
+    }
+
+    return 0;
+}
+
+int mostarVector(int vector[],len)
+{
+    for(i=0, i<len;i++)
+        printf("-%d-", vector[i]);
+
+        return 0;
+}
+
+int salir(int vector[],len)
+{
+    for(i=0, i<len;i++)
+        printf("-%d-", vector[i]);
+
+        return 0;
+}
