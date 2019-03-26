@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1553559839 source:c:\users\alumno\desktop\lab\ansi_c\funciones\funcmaximo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"torrez.h"
+
+1553560086 c:\users\alumno\desktop\lab\ansi_c\funciones\funcmaximo\torrez.h
+
+1553559859 source:c:\users\alumno\desktop\lab\ansi_c\funciones\funcmaximo\torrez.c
+	"torrez.h"
+
