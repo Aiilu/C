@@ -11,7 +11,7 @@ int main()
 {
     int vector[10];
 
-    menu();
+    menu(vector);
 
     return 0;
 }
@@ -19,86 +19,82 @@ int main()
 void menu(int vector[])
 {
     int opcion;
+    int flag = 0;
 
-    printf("**********MENU DE VECTORES**********\n");
-    printf("*ELIJA UNA OPCION PARA CONTINUAR:***\n");
-    printf("*1)CARGAR UN VECTOR.****************\n");
-    printf("*2)ORDENAR UN VECTOR.***************\n");
-    printf("*3)MOSTRAR UN VECTOR.***************\n");
-    printf("*4)SALIR.***************************\n");
-    printf("************************************\n");
+    printf("MENU DE VECTORES\n");
+    printf("1.CARGAR UN VECTOR.\n");
+    printf("2.ORDENAR UN VECTOR.\n");
+    printf("3.MOSTRAR UN VECTOR.\n");
+    printf("4.SALIR.\n");
+    printf("ELIJA UNA OPCION PARA CONTINUAR: ");
     scanf("%d",&opcion);
 
     switch(opcion)
     {
     case 1:
-        cargarVector();
+        cargarVector(vector,10);
+        flag = 1;
         break;
     case 2:
-        ordenarVector();
+        if(flag == 1)
+        {
+        ordenarVector(vector,10);
+        }
+        else
+        {
+            printf("Primero debe cargar el Vector\n");
+        }
         break;
     case 3:
-        mostrarVector();
+        if(flag == 1)
+        {
+            mostarVector(vector,10);
+        }
         break;
     case 4:
-        salir();
         break;
     default:
         printf("Esta opcion no es valida\n");
-        break;
     }
 
 }
 
-int cargarVector(int vector[])
+int cargarVector(int vector[], int len)
 {
+    int i;
 
-    for(int i=0; i<10; i++)
+    for(i=0;i<len;i++)
     {
-        printf("Ingrese el %d° numero: \n", i);
-        scanf("%d", vector[i]);
+        printf("Ingrese un valor: ");
+        scanf("%d",&vector[i]);
     }
 
     return 0;
 }
 
-int ordenarVector(int vector[], int 10)
-{
-   int i,j;
-   int temp;
+ int ordenarVector(int vector[],int len)
+ {
+    int i;
+    int j;
+    int aux;
 
-   for(i=1;i<10;i++)
-   {
-        temp = vector[i];
-        j=i-1;
+    for(i=0; i<len-1; i++)
+	 {
+	  for(j=i+1; j<len; j++)
+		 {
+		   if(vector[i]<vector[j])
+           {
+		   aux=vector[i];
+		   vector[i]=vector[j];
+		   vector[j]=aux;
 
-        while(j>=0 && temp<vector[j])
-        {
-            vector[j+1] = vector[j];
-            j--;
-        }
+           }
+		 }
+	 }
 
-        vector[j+1]=temp;
-    }
+	 return 0;
+ }
 
-    return 0;
-}
-
-int mostarVector(int vector[],10)
-{
-    for(i=0, i<10;i++)
-        printf("-%d-", vector[i]);
-
-        return 0;
-}
-
-int salir(int vector[],10)
-{
-    for(i=0, i<10;i++)
-        printf("-%d-", vector[i]);
-
-        return 0;
-}
 /*Realizar un programa que por medio de un menú de opciones y trabajando con un vector de 50 enteros me
 permita:
 a- Cargar el vector
