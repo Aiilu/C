@@ -4,8 +4,7 @@
 void menu();
 int cargarVector(int[], int);
 int ordenarVector(int[], int);
-int mostarVector(int[], int);
-int salir(int[],int);
+int mostrarVector(int[],int);
 
 int main()
 {
@@ -21,7 +20,6 @@ void menu(int vector[])
     int opcion;
     int flag = 0;
 
-    printf("MENU DE VECTORES\n");
     printf("1.CARGAR UN VECTOR.\n");
     printf("2.ORDENAR UN VECTOR.\n");
     printf("3.MOSTRAR UN VECTOR.\n");
@@ -48,7 +46,11 @@ void menu(int vector[])
     case 3:
         if(flag == 1)
         {
-            mostarVector(vector,10);
+            mostrarVector(vector,10);
+        }
+        else
+        {
+            printf("Primero debe Ordenar el Vector\n");
         }
         break;
     case 4:
@@ -95,6 +97,16 @@ int cargarVector(int vector[], int len)
 	 return 0;
  }
 
+ int mostrarVector(int vec[],int len)
+ {
+     int i;
+     for(i=0;i<len;i++)
+     {
+         printf("%d\n",vec[i]);
+     }
+
+     return 0;
+ }
 /*Realizar un programa que por medio de un menú de opciones y trabajando con un vector de 50 enteros me
 permita:
 a- Cargar el vector

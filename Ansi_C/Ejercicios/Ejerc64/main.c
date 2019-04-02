@@ -5,7 +5,7 @@ int main()
 {
     int vector[10];
     int i;
-    int auxiliar;
+    int aux;
     int j;
 
     for(i=0;i<10;i++)
@@ -26,6 +26,23 @@ int main()
     }
 
     printf("POSITIVOS FORMA DECRECIENTE: ");
+    for(i=0;i<10;i++)
+    {
+        for(j=0;j+1;j++)
+        {
+            if(vector[i]>0){
+             if(vector[i]<vector[j])
+             {
+                 aux=vector[i];
+                 vector[i]=vector[j];
+                 vector[j]=aux;
+            }
+         }
+        }
+
+            printf("%d\n",vector[i]);
+
+    }
 
     printf("NEGATIVOS FORMA CRECIENTE: ");
 
