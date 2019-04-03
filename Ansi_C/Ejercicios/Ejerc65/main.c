@@ -1,25 +1,61 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define TAM 5
 
-void menu();
+int mostrarMenu();
 int cargarVector(int[], int);
-int ordenarVector(int[], int);
-int mostrarVector(int[],int);
+int ordenarVector();
+int mostarVector(int[], int);
+int mostrarVectorOrdenado(int vector[], int len);
 
 int main()
 {
-    int vector[10];
+    int vector[TAM];
+    char seguir='s';
+    char validar='w';
 
-    menu(vector);
+    do
+    {
+        switch(mostrarMenu())
+        {
+        case 1:
+            cargarVector(vector,TAM);
+            seguir = 's';
+            break;
+        case 2:
+            ordenarVector(vector,TAM);
+            validar = 'w';
+            break;
+        case 3:
+            if(validar == 'w')
+            {
+             mostrarVectorOrdenado(vector,TAM);
+            }
+            else
+            {
+            mostarVector(vector,TAM);
+            }
+            break;
+        case 4:
+            seguir = 'n';
+            break;
+        default:
+            printf("Opcion Invalida\n");
+            break;
+        }
+
+        system("pause");
+    }
+    while(seguir == 's');
 
     return 0;
 }
 
-void menu(int vector[])
+int mostrarMenu()
 {
     int opcion;
-    int flag = 0;
 
+    printf("MENU DE VECTORES\n");
     printf("1.CARGAR UN VECTOR.\n");
     printf("2.ORDENAR UN VECTOR.\n");
     printf("3.MOSTRAR UN VECTOR.\n");
@@ -27,38 +63,7 @@ void menu(int vector[])
     printf("ELIJA UNA OPCION PARA CONTINUAR: ");
     scanf("%d",&opcion);
 
-    switch(opcion)
-    {
-    case 1:
-        cargarVector(vector,10);
-        flag = 1;
-        break;
-    case 2:
-        if(flag == 1)
-        {
-        ordenarVector(vector,10);
-        }
-        else
-        {
-            printf("Primero debe cargar el Vector\n");
-        }
-        break;
-    case 3:
-        if(flag == 1)
-        {
-            mostrarVector(vector,10);
-        }
-        else
-        {
-            printf("Primero debe Ordenar el Vector\n");
-        }
-        break;
-    case 4:
-        break;
-    default:
-        printf("Esta opcion no es valida\n");
-    }
-
+    return opcion;
 }
 
 int cargarVector(int vector[], int len)
@@ -68,18 +73,38 @@ int cargarVector(int vector[], int len)
     for(i=0;i<len;i++)
     {
         printf("Ingrese un valor: ");
-        scanf("%d",&vector[i]);
+        scanf("%d\n",&vector[i]);
     }
 
     return 0;
 }
 
- int ordenarVector(int vector[],int len)
+ int ordenarVector()
  {
-    int i;
-    int j;
-    int aux;
 
+    printf("SE ESTA ORDENANDO EL VECTOR\n");
+
+	 return 0;
+ }
+
+ int mostarVector(int vector[], int len)
+ {
+     int i;
+
+     for(i=0;i<len;i++)
+     {
+         printf("%d\n",vector[i]);
+     }
+
+     return 0;
+ }
+
+ int mostrarVectorOrdenado(int vector[], int len)
+ {
+
+ int i;
+ int j;
+ int aux;
     for(i=0; i<len-1; i++)
 	 {
 	  for(j=i+1; j<len; j++)
@@ -92,21 +117,15 @@ int cargarVector(int vector[], int len)
 
            }
 		 }
+
+		 printf("%d\n",vector[i]);
 	 }
 
 	 return 0;
  }
 
- int mostrarVector(int vec[],int len)
- {
-     int i;
-     for(i=0;i<len;i++)
-     {
-         printf("%d\n",vec[i]);
-     }
 
-     return 0;
- }
+
 /*Realizar un programa que por medio de un menú de opciones y trabajando con un vector de 50 enteros me
 permita:
 a- Cargar el vector
