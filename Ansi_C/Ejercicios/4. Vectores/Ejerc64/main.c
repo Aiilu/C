@@ -3,7 +3,7 @@
 
 int main()
 {
-    int vector[]={2,6,8,7,4,1,9,5,3,10};
+    int vector[]={2,-6,8,-7,4,-1,9,-5,3,-10};
     int i;
     int auxiliar;
     int j;
@@ -19,13 +19,13 @@ int main()
         }
     }*/
 
-    printf("VECTOR INGRESADO: ");
+    printf("VECTOR INGRESADO: \n");
     for(i=0;i<10;i++)
     {
         printf("%d\n",vector[i]);
     }
 
-    printf("POSITIVOS FORMA DECRECIENTE: ");
+    printf("POSITIVOS FORMA DECRECIENTE: \n");
     for(i=0;i<11-1;i++)
     {
         for(j=i+1;j<10;j++)
@@ -38,11 +38,21 @@ int main()
             }
         }
 
-        printf("%d\n",vector[i]);
+        //printf("%d\n",vector[i]);
     }
 
-    printf("NEGATIVOS FORMA CRECIENTE: ");
-    for(i=0;i<11-1;i++)
+    for(i=0;i<10;i++)
+    {
+        while(vector[i]>0)
+        {
+            printf("%d\n",vector[i]);
+            break;
+        }
+    }
+
+   printf("NEGATIVOS FORMA CRECIENTE: \n");
+
+  /*  for(i=0;i<11-1;i++)
     {
         for(j=i+1;j<10;j++)
         {
@@ -54,10 +64,17 @@ int main()
             }
          }
 
+    }*/
 
-        printf("%d\n",vector[i]);
+    for(i=0;i<10;i++)
+    {
+        while(vector[i]<0)
+        {
+            printf("%d\n",vector[i]);
+            break;
+
+        }
     }
-
     return 0;
 }
 
