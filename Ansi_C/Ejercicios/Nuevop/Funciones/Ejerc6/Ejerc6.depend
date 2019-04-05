@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1554486686 source:c:\users\e76b73a\desktop\nuevop\funciones\ejerc6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
