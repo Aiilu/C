@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1553899952 source:c:\users\alumno\desktop\prog\ansi_c\funciones\ingnumeros\main.c
+	<stdio.h>
+	<stdlib.h>
+
