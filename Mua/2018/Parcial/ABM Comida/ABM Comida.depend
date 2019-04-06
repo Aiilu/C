@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1541373781 source:c:\users\pc\desktop\parcial\abm comida\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1541373781 source:c:\users\pc\desktop\mua\parcial\abm comida\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

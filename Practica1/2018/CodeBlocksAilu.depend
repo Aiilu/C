@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1535150251 source:c:\users\mirta\desktop\codeblocksailu\main.c
+	<stdio.h>
+	<stdlib.h>
+

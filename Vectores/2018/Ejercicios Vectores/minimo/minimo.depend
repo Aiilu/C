@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1536455264 source:c:\users\mirta\desktop\practica\minimo\main.c
+	<stdio.h>
+	<stdlib.h>
+
