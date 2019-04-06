@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1554569880 source:c:\users\usuario\desktop\lab\cadenas\2019\cadenas\ordcadenas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
