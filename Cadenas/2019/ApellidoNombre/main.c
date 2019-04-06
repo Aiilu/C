@@ -22,11 +22,13 @@ int main()
     strcat(nombreCompleto,", ");
     strcat(nombreCompleto,nombre);
 
+    strlwr(nombreCompleto);
+
     nombreCompleto[0] = toupper(nombreCompleto[0]);
 
     for(i=0;i<strlen(nombreCompleto);i++)
     {
-        if(nombreCompleto == ' ')
+        if(nombreCompleto[i] == ' ')
         {
             nombreCompleto[i+1] = toupper(nombreCompleto[i+1]);
         }

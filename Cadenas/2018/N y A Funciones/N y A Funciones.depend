@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1537824307 source:c:\users\mirta\desktop\putos todos\cadenas\n y a funciones\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-
