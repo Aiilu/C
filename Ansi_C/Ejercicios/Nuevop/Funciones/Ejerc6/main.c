@@ -5,6 +5,7 @@
 
 void mostrarAlumnos(char nombres[][21],char apellidos[][21],int notas[], int legajos[], int tam);
 float promed(int notas[], int tam);
+void mostrarAprobados(char nombres[][21],char apellidos[][21],int notas[], int tam);
 
 int main()
 {
@@ -34,6 +35,8 @@ int main()
     promedio = promed(nota,T);
     printf("Promedio: %.2f",promedio);
 
+    mostrarAprobados(nombre,apellido,nota,T);
+
     return 0;
 }
 
@@ -58,17 +61,33 @@ float promed(int notas[], int tam)
 
     for(i=0;i<tam;i++)
     {
-        if(notas[i]>=6)
+        if(notas[i]>6)
         {
             acum+=notas[i];
             cont ++;
         }
     }
 
-    prom = acum/cont;
+    prom = (float)acum/cont;
 
     return prom;
 }
+
+void mostrarAprobados(char nombres[][21],char apellidos[][21],int notas[], int tam)
+{
+    int i;
+
+    printf("%35s \n","Alumnos Aprobados");
+
+    for(i=0; i<tam; i++)
+    {
+        if(notas[i]>6)
+        {
+        printf("%11s %11s %13d \n", nombres[i], apellidos[i], notas[i]);
+        }
+    }
+}
+
 /*6- Se desean obtener determinados datos de un examen.
 Para ello se carga el nombre y apellido, la nota y el legajo de 25 alumnos. Se pide:
  Calcular el porcentaje de aprobados usando una función.

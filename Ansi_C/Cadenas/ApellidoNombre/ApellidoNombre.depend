@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1554511279 source:c:\users\alumno\desktop\prog\ansi_c\cadenas\apellidonombre\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

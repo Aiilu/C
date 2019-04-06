@@ -7,13 +7,10 @@ void ordenarAlumnos( int leg[], int n1[], int n2[], char sex[], float prom[], in
 
 int main()
 {
-   int auxInt;
    int legajos[TAM]= { 1233, 2345, 6543, 7864, 6578};
    int notas1[TAM]= { 5, 7, 8, 3, 5 };
    int notas2[TAM] = { 9, 5, 2, 9,5};
-   float auxFloat;
    float promedios[TAM] = { 7, 6, 5, 6, 5 };
-   char auxChar;
    char sexos[TAM] = { 'f', 'f', 'm', 'f', 'm'};
    int i;
 
@@ -111,6 +108,30 @@ for( i=0; i < tam - 1; i++){
 
 
         }
+
+        else
+        {
+            if(sex[i] == sex[j] && leg[i] > leg[j])
+            {
+               auxInt = leg[i];
+        leg[i] = leg[j];
+        leg[j] = auxInt;
+
+            auxInt = n1[i];
+         n1[i] = n1[j];
+         n1[j] = auxInt;
+
+          auxInt = n2[i];
+         n2[i] = n2[j];
+         n2[j] = auxInt;
+
+               auxFloat = prom[i];
+              prom[i] = prom[j];
+              prom[j] = auxFloat;
+            }
+        }
+
+
     }
     }
 
@@ -122,3 +143,4 @@ for( i=0; i < tam - 1; i++){
 
 
 }
+
