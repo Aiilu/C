@@ -35,6 +35,7 @@ int main()
     promedio = promed(nota,T);
     printf("Promedio: %.2f",promedio);
 
+    printf("\n\n");
     mostrarAprobados(nombre,apellido,nota,T);
 
     return 0;
@@ -77,7 +78,7 @@ void mostrarAprobados(char nombres[][21],char apellidos[][21],int notas[], int t
 {
     int i;
 
-    printf("%35s \n","Alumnos Aprobados");
+    printf("%30s \n","Alumnos Aprobados");
 
     for(i=0; i<tam; i++)
     {
