@@ -16,6 +16,7 @@ float sueldo;
 int main()
 {
     Eempleado emp;
+    char auxCad[100];
 
     printf("Ingrese legajo: ");
     scanf("%d",&emp.legajo);
@@ -29,14 +30,16 @@ int main()
 
      printf("Ingrese nombre: ");
      fflush(stdin);
-     gets(emp.nombre);
+     gets(auxCad);
 
-    while(strlen(emp.nombre)>19)
+    while(strlen(auxCad)>19)
     {
         printf("ERROR. Ingrese nombre menor a 19 caracteres: ");
         fflush(stdin);
-        gets(emp.nombre);
+        gets(auxCad);
     }
+
+    strcpy(emp.nombre,auxCad);
 
     printf("Ingrese el sexo, F/M: ");
     fflush(stdin);
@@ -62,4 +65,5 @@ int main()
 
     return 0;
 }
+
 
