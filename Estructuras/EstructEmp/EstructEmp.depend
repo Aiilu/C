@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1554763763 source:c:\users\alumno\desktop\laboratorio\estructuras\estructemp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
