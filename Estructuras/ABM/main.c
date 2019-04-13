@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#define T 3
+#define T 2
 #define VACIO 0
 #define OCUPADO 1
 
@@ -18,14 +18,17 @@ typedef struct
 void inicVacio(Eempleado[],int);
 void menu(Eempleado[], int);
 int buscarVacio(Eempleado[], int);
-int altaEmpleado(Eempleado[],int);
+//int altaEmpleado(Eempleado[],int);
+void altaEmpleado(Eempleado x[],int tam);
 void mostrarEmpleado(Eempleado);
 void mostrarEmpleados(Eempleado[],int);
 void menuInformes(Eempleado[], int);
 void ordenarNombrexLegajo(Eempleado[],int);
-int modificarEmpleado(Eempleado[],int);
+//int modificarEmpleado(Eempleado[],int);
+void modificarEmpleado(Eempleado x[],int tam);
 int bajaEmpleado(Eempleado[],int);
 int utn_validarInt(int auxNumero,int min, int max);
+int buscarEmpleado(Eempleado x[],int tam, int legajo);
 
 int main()
 {
@@ -59,14 +62,7 @@ void menu(Eempleado x[], int tam)
         switch(opcion)
         {
         case 1:
-            if(altaEmpleado(x,tam) !=-1)
-            {
-                printf("Empleado dado de Alta con exito!\n");
-            }
-            else
-            {
-                printf("No hay mas espacio\n");
-            }
+            altaEmpleado(x,tam);
             break;
         case 2:
             mostrarEmpleados(x,tam);
@@ -75,14 +71,7 @@ void menu(Eempleado x[], int tam)
             menuInformes(x,tam);
             break;
         case 4:
-            if(modificarEmpleado(x,tam) !=0)
-            {
-                printf("Empleado modificado con exito!\n");
-            }
-            else
-            {
-                printf("Modificacion cancelada\n");
-            }
+            modificarEmpleado(x,tam);
             break;
         case 5:
             if(bajaEmpleado(x,tam) !=0)
@@ -126,13 +115,30 @@ int buscarVacio(Eempleado x[], int tam)
         if(x[i].estado == VACIO)
         {
             index = i;
+            break;
         }
     }
 
     return index;
 }
 
-int altaEmpleado(Eempleado x[],int tam)
+int buscarEmpleado(Eempleado x[],int tam, int legajo)
+{
+   int encontre = -1;
+
+   for(int i=0;i< tam;i++)
+   {
+       if(x[i].legajo == legajo && x[i].estado == 1)
+       {
+           encontre = i;
+           break;
+       }
+   }
+
+   return encontre;
+}
+
+/*int altaEmpleado(Eempleado x[],int tam)
 {
 
     int index = buscarVacio(x,tam);
@@ -140,7 +146,19 @@ int altaEmpleado(Eempleado x[],int tam)
     if(index !=-1)
     {
         printf("Ingrese legajo: ");
+        fflush(stdin);
         scanf("%d",&x[index].legajo);
+
+        if(buscarEmpleado(x,tam,x[index].legajo) == -1)
+        {
+            printf("Legajo aceptado\n");
+        }
+        else
+        {
+                printf("Legajo ya ocupado. Ingrese otro: \n");
+                scanf("%d",&x[index].legajo);
+
+        }
 
         printf("Ingrese nombre: ");
         fflush(stdin);
@@ -157,6 +175,56 @@ int altaEmpleado(Eempleado x[],int tam)
     }
 
     return index;
+}*/
+
+void altaEmpleado(Eempleado x[],int tam)
+{
+
+    int index = buscarVacio(x,tam);
+    int legajo;
+     int esta;
+
+    if(index == -1)
+    {
+        printf("NO HAY LUGAR\n");
+    }
+    else
+    {
+        printf("Ingrese legajo: ");
+        fflush(stdin);
+        scanf("%d",&legajo);
+
+        esta = buscarEmpleado(x,tam,legajo);
+
+        if(esta == -1)
+        {
+           x[index].legajo = legajo;
+
+        printf("Ingrese nombre: ");
+        fflush(stdin);
+        gets(x[index].nombre);
+
+        printf("Ingrese sexo (F/M): ");
+        fflush(stdin);
+        scanf("%c",&x[index].sexo);
+
+        printf("Ingrese sueldo: ");
+        scanf("%f",&x[index].sueldo);
+
+        x[index].estado = OCUPADO;
+
+        printf("Dado de alta con Exito\n");
+
+        }
+        else{
+
+            printf("Ya existe\n");
+            mostrarEmpleado(x[esta]);
+
+        }
+
+
+        }
 }
 
 void mostrarEmpleado(Eempleado x)
@@ -225,7 +293,7 @@ void ordenarNombrexLegajo(Eempleado x[],int tam)
     mostrarEmpleados(x,tam);
 }
 
-int modificarEmpleado(Eempleado x[],int tam)
+/*int modificarEmpleado(Eempleado x[],int tam)
 {
     int index = 0;
     char seguir;
@@ -263,6 +331,47 @@ int modificarEmpleado(Eempleado x[],int tam)
     }
 
     return index;
+}*/
+
+void modificarEmpleado(Eempleado x[],int tam)
+{
+    char seguir;
+    int legajoTrucho;
+    float importe;
+
+    printf("   Empleados\n");
+
+    mostrarEmpleados(x,tam);
+
+    printf("Ingrese el legajo del empleado a buscar: ");
+    scanf("%d",&legajoTrucho);
+
+    for(int i=0; i<tam; i++)
+    {
+        if(x[i].estado == OCUPADO && legajoTrucho == x[i].legajo)
+        {
+            mostrarEmpleado(x[i]);
+
+            printf("Ingrese el nuevo sueldo del legajo %d: ",legajoTrucho);
+            scanf("%f",&importe);
+
+            printf("Esta seguro de esta modificacion?\n");
+            fflush(stdin);
+            seguir = getchar();
+            seguir = toupper(seguir);
+
+            if(seguir == 's' || seguir == 'S')
+            {
+                x[i].sueldo = importe;
+                printf("Modificacion exitosa\n");
+            }
+            else
+            {
+
+               printf("Modificacion cancelada\n");
+            }
+        }
+    }
 }
 
 int bajaEmpleado(Eempleado x[],int tam)
