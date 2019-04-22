@@ -47,7 +47,7 @@ void listarSectores(eSector x[], int tam);
 void mostrarSectores(eSector x[], int tam, int idSector, char cadena[]);
 void listarEmpXsector(eEmpleado x[], int tam, eSector sec[], int tamSec);
 void totalEmpxSector(eEmpleado x[], int tam, eSector sec[], int tamSec);
-void ordenarSectorxNombre(eEmpleado x[], int tam, eSector sec[], int tamSec);
+//void ordenarSectorxNombre(eEmpleado x[], int tam, eSector sec[], int tamSec);
 void empleadosMasGanadores(eEmpleado x[], int tam, eSector sec[], int tamSec);
 
 int main()
@@ -110,6 +110,9 @@ int main()
             printf("\n Opcion invalida\n\n");
             system("break");
         }
+
+        system("pause");
+        system("cls");
     }
     while(seguir == 's');
 
@@ -433,7 +436,7 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec)
             break;
 
         case 4:
-            ordenarSectorxNombre(x,tam,sec,tamSec);
+            //ordenarSectorxNombre(x,tam,sec,tamSec);
             system("pause");
             break;
 
@@ -457,6 +460,9 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec)
             printf("\n Opcion invalida\n\n");
             system("break");
         }
+
+        system("pause");
+        system("cls");
     }
     while(seguir == 's');
 }
@@ -569,22 +575,23 @@ void totalEmpxSector(eEmpleado x[], int tam, eSector sec[], int tamSec)
     }
 }
 
-void ordenarSectorxNombre(eEmpleado x[], int tam, eSector sec[], int tamSec)
+/*void ordenarSectorxNombre(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
     eEmpleado aux;
 
     for(int i=0; i<tam-1; i++)
     {
+
         for(int j=i+1; j<tam; i++)
         {
-            if(strcmp(x[i].sector,x[j].sector)>0)
+            if(strcmp()>0)
             {
                 aux=x[i];
                 x[i]=x[j];
                 x[j]=x[i];
             }
 
-            else if(strcmp(x[i].sector,x[j].sector) == 0 && strcmp(x[i].nombre,x[j].nombre)>0)
+            else if(strcmp() == 0 && strcmp(x[i].nombre,x[j].nombre)>0)
             {
                 aux=x[i];
                 x[i]=x[j];
@@ -596,9 +603,44 @@ void ordenarSectorxNombre(eEmpleado x[], int tam, eSector sec[], int tamSec)
 
     printf("Empleados ordenados con exito\n");
 
-}
+}*/
 
 void empleadosMasGanadores(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
+    char descripcion[20];
+    float max;
+    int flag = 0;
+
+   for(int i=0;i<tamSec;i++)
+   {
+       mostrarSectores(sec,tamSec,sec[i].id,descripcion);
+       printf("Sector %s\n",descripcion);
+
+       for(int j=0;j<tam;j++)
+       {
+           if(x[j].sueldo > max && x[j].sector == sec[i].id)
+           {
+               max = x[j].sueldo;
+
+               flag = 1;
+           }
+       }
+
+       if(flag == 0)
+   {
+        printf("El sector esta vacio\n");
+
+   }
+   else
+   {
+         for(int j=0;j<tam;j++)
+       {
+           if(x[j].sueldo == max && x[j].sector == sec[i].id)
+           {
+               mostrarEmpleado(x[j],sec,tamSec);
+           }
+       }
+   }
+   }
 
 }
