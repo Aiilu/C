@@ -47,6 +47,7 @@ void listarSectores(eSector x[], int tam);
 void mostrarSectores(eSector x[], int tam, int idSector, char cadena[]);
 void listarEmpXsector(eEmpleado x[], int tam, eSector sec[], int tamSec);
 void totalEmpxSector(eEmpleado x[], int tam, eSector sec[], int tamSec);
+void empXsector(eEmpleado x[], int tam, eSector sec[], int tamSec);
 //void ordenarSectorxNombre(eEmpleado x[], int tam, eSector sec[], int tamSec);
 void empleadosMasGanadores(eEmpleado x[], int tam, eSector sec[], int tamSec);
 
@@ -406,10 +407,11 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec)
         system("cls");
         printf("1- Mostrar Empleados Por Anio\n");
         printf("2- Mostrar Empleados de un Sector\n");
-        printf("3- Cantidad de Empleados de un Sector\n");
-        printf("4- Ordenar Empleados por Sector/Nombre\n");
-        printf("5- Empleados que mas ganan\n");
-        printf("6- Salir\n\n");
+        printf("3- Cantidad de Empleados x Sector\n");
+        printf("4- Empleados x Sector\n");
+        printf("5- Sectores con mas empleados\n");
+        printf("6- Empleados que mas ganan x Sector\n");
+        printf("7- Salir\n\n");
         printf("Ingrese opcion: ");
         scanf("%d", &opcion);
 
@@ -436,16 +438,20 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec)
             break;
 
         case 4:
-            //ordenarSectorxNombre(x,tam,sec,tamSec);
+            empXsector(x,tam,sec,tamSec);
             system("pause");
             break;
 
         case 5:
-            empleadosMasGanadores(x,tam,sec,tamSec);
+            sectMasEmpleados(x,tam,sec,tamSec);
             system("pause");
             break;
 
         case 6:
+            system("pause");
+            break;
+
+        case 7:
             printf("\nConfirma salida s/n?: ");
             fflush(stdin);
             confirma = getche();
@@ -540,74 +546,76 @@ void listarEmpXsector(eEmpleado x[], int tam, eSector sec[], int tamSec)
 
 void totalEmpxSector(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
-    int idSector;
-    int flag = 0;
-    int cont = 0;
     char descripcion[20];
+    int cont = 0;
 
-    system("cls");
-    printf("  *** Listado de Sectores ***\n\n");
 
-    listarSectores(sec,tamSec);
-    printf("\n\n");
-    printf("Ingrese ID Sector: ");
-    scanf("%d",&idSector);
-
-    mostrarSectores(sec,tamSec,idSector,descripcion);
-
-    for(int i=0; i<tam; i++)
+    for(int i=0; i<tamSec; i++)
     {
-        if(x[i].sector == idSector)
+            mostrarSectores(sec,tamSec,sec[i].id,descripcion);
+
+            printf("Sector: %s\n",sec[i].descripcion);
+
+        for(int j=0; j<tam; j++)
         {
-            cont++;
-            flag = 1;
+            if(x[j].sector == sec[i].id && x[j].ocupado == 1)
+            {
+                cont++;
+            }
 
         }
+
+        printf("Cant de Empleados: %d\n\n",cont);
     }
 
-    if(flag == 1)
+}
+
+void empXsector(eEmpleado x[], int tam, eSector sec[], int tamSec)
+{
+    char descripcion[20];
+
+    for(int i=0; i<tamSec; i++)
     {
-        printf("Hay %d empleado/s en el sector %s\n",cont,descripcion);
-    }
-    else
-    {
-        printf("No hay empleados en este sector\n");
+           mostrarSectores(sec,tamSec,sec[i].id,descripcion);
+
+            printf("Sector: %s\n",descripcion);
+
+        for(int j=0; j<tam; j++)
+        {
+
+            if(x[j].sector == sec[i].id && x[j].ocupado == 1)
+            {
+                mostrarEmpleado(x[j],sec,tamSec);
+            }
+
+        }
     }
 }
 
-/*void ordenarSectorxNombre(eEmpleado x[], int tam, eSector sec[], int tamSec)
+void sectMasEmpleados(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
-    eEmpleado aux;
+    int mayor;
 
-    for(int i=0; i<tam-1; i++)
+    for(int i=0;i<tamSec;i++)
     {
-
-        for(int j=i+1; j<tam; i++)
+        for(int j=0;j<tam;j++)
         {
-            if(strcmp()>0)
+            if(x[j].sector == sec[i].id)
             {
-                aux=x[i];
-                x[i]=x[j];
-                x[j]=x[i];
+                if(x[j].sector > mayor)
+                {
+                    mayor = x[j].sector;
+                }
             }
-
-            else if(strcmp() == 0 && strcmp(x[i].nombre,x[j].nombre)>0)
-            {
-                aux=x[i];
-                x[i]=x[j];
-                x[j]=x[i];
-            }
-
         }
     }
 
-    printf("Empleados ordenados con exito\n");
+    printf("Max %d",mayor);
+}
 
-}*/
-
-void empleadosMasGanadores(eEmpleado x[], int tam, eSector sec[], int tamSec)
+void empMasGanadorXsector(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
-    char descripcion[20];
+     char descripcion[20];
     float max;
     int flag = 0;
 
@@ -642,5 +650,9 @@ void empleadosMasGanadores(eEmpleado x[], int tam, eSector sec[], int tamSec)
        }
    }
    }
+}
+
+void sectEmp(eEmpleado x[], int tam, eSector sec[], int tamSec)
+{
 
 }
