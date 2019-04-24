@@ -423,7 +423,9 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec)
         printf("7- Sectores con Mujeres\n");
         printf("8- Promedio y Total de Salarios de un Sector\n");
         printf("9- Nacidos <= 2009\n");
-        printf("10- Salir\n\n");
+       printf("10- Empleados con el mismo Salario"\n);
+       printf("11- Cant de Hombres x Sector\n");
+       printf("12- Salir\n\n");
         printf("Ingrese opcion: ");
         scanf("%d", &opcion);
 
@@ -743,8 +745,6 @@ void promSector(eEmpleado x[], int tam, eSector sec[], int tamSec)
             cont++;
             acum+=x[i].sueldo;
         }
-
-        printf("Paso por aca\n");
     }
 
     if(flag == 0)
@@ -755,7 +755,7 @@ void promSector(eEmpleado x[], int tam, eSector sec[], int tamSec)
     {
         prom = acum/cont;
 
-        printf("La suma total de los salarios de este sector es %d y el promedio es de %.2f\n",acum,prom);
+        printf("La suma total de los salarios de este sector es %.2f y el promedio es de %.2f\n",acum,prom);
     }
 }
 
