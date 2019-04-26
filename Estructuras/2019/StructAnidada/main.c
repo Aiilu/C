@@ -440,57 +440,46 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec)
             scanf("%d",&anio);
 
             empleadoXanio(x,tam,anio,sec,tamSec);
-            system("pause");
             break;
 
         case 2:
             listarEmpXsector(x,tam,sec,tamSec);
-            system("pause");
             break;
 
         case 3:
             totalEmpxSector(x,tam,sec,tamSec);
-            system("pause");
             break;
 
         case 4:
             empXsector(x,tam,sec,tamSec);
-            system("pause");
             break;
 
         case 5:
             sectMasEmpleados(x,tam,sec,tamSec);
-            system("pause");
             break;
 
         case 6:
             empMasGanadorXsector(x,tam,sec,tamSec);
-            system("pause");
             break;
 
         case 7:
             sectorMujeres(x,tam,sec,tamSec);
-            system("pause");
             break;
 
         case 8:
             promSector(x,tam,sec,tamSec);
-            system("pause");
             break;
 
         case 9:
             menorIgual2009(x,tam,sec,tamSec);
-            system("pause");
             break;
 
         case 10:
             mismoSalario(x,tam,sec,tamSec);
-            system("pause");
             break;
 
         case 11:
             cantHombres(x,tam,sec,tamSec);
-            system("pause");
             break;
 
         case 12:
@@ -676,29 +665,27 @@ void sectMasEmpleados(eEmpleado x[], int tam, eSector sec[], int tamSec)
 void empMasGanadorXsector(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
     float mayor;
-    int flag = 0;
-    int flag1 = 0;
+    int flag;
 
     for(int i=0; i<tamSec; i++)
     {
+        flag = 0;
+        mayor = 0;
         for(int j=0; j<tam; j++)
         {
 
-            if((x[j].sueldo > mayor && x[j].sector == sec[i].id && x[j].ocupado == 1) || (flag == 0))
+            if( (x[j].sueldo > mayor || flag ==0) && x[j].sector == sec[i].id && x[j].ocupado == 1 )
             {
                 mayor = x[j].sueldo;
 
                 flag = 1;
             }
 
-            if(x[j].sector == sec[i].id && x[j].ocupado == 1)
-            {
-                flag1 = 1;
-            }
+
 
         }
 
-        if(flag1 == 0)
+        if(flag == 0)
         {
             printf("Esta vacio\n");
         }
@@ -706,7 +693,7 @@ void empMasGanadorXsector(eEmpleado x[], int tam, eSector sec[], int tamSec)
         {
             for(int j=0; j<tam; j++)
             {
-                if(x[j].sueldo == mayor && x[i].ocupado == 1)
+                if(x[j].sueldo == mayor && x[i].ocupado == 1 && x[j].sector == sec[i].id )
                 {
                     mostrarEmpleado(x[j],sec,tamSec);
                 }
@@ -786,7 +773,7 @@ void menorIgual2009(eEmpleado x[], int tam, eSector sec[], int tamSec)
     }
 }
 
-void mismoSalario(eEmpleado x[], int tam, eSector sec[], int tamSec)
+/*void mismoSalario(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
     int cont=0;
     int conjunto[tam];
@@ -822,7 +809,7 @@ void mismoSalario(eEmpleado x[], int tam, eSector sec[], int tamSec)
     {
         printf("Ningun empleado tiene el mismo sueldo\n");
     }
-}
+}*/
 
 void cantHombres(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
@@ -847,5 +834,43 @@ void cantHombres(eEmpleado x[], int tam, eSector sec[], int tamSec)
     if(cont == 0)
     {
         printf("No hay ningun hombre\n");
+    }
+}
+
+void mismoSalario(eEmpleado x[], int tam, eSector sec[], int tamSec)
+{
+    int cont=0;
+    int conjunto[tam];
+    int flag = 0;
+
+    for(int j=0;j<tam;j++)
+    {
+        conjunto[j] = 0;
+    }
+
+    for(int i=0; i<tamSec; i++)
+    {
+        for(int j=0; j<tam; j++)
+        {
+            conjunto[j]++;
+
+            if((flag == 0) || (x[j].sector == sec[i].id && x[j].ocupado == 1))
+            {
+                flag = 1;
+            }
+        }
+    }
+
+    for(int j=0;j<tam;j++)
+    {
+        if(flag == 1 && x[j].ocupado == 1 && conjunto[j] == x[j].sueldo)
+        {
+           cont++;
+        }
+    }
+
+    if(cont == 0)
+    {
+        printf("Ningun empleado tiene el mismo sueldo\n");
     }
 }
