@@ -54,6 +54,8 @@ void empMasGanadorXsector(eEmpleado x[], int tam, eSector sec[], int tamSec);
 void sectorMujeres(eEmpleado x[], int tam, eSector sec[], int tamSec);
 void promSector(eEmpleado x[], int tam, eSector sec[], int tamSec);
 void menorIgual2009(eEmpleado x[], int tam, eSector sec[], int tamSec);
+void mismoSalario(eEmpleado x[], int tam, eSector sec[], int tamSec);
+void cantHombres(eEmpleado x[], int tam, eSector sec[], int tamSec);
 
 int main()
 {
@@ -366,7 +368,7 @@ void harcodeEmpleado(eEmpleado vec[], int tam)
     eEmpleado hardcode[]=
     {
         {1234, "Juan", 'm', 30000,1,{12,3,2000}, 4},
-        {2222, "Ana", 'f', 32000,1, {2,7,2010},1},
+        {2222, "Ana", 'f', 30000,1, {2,7,2010},1},
         {2211, "Jorge", 'm', 28000,1,{14,5,2013},1},
         {3241, "Alberto", 'm', 35000,1, {2,9,2010},2},
         {8944, "Sonia", 'f', 39000,1, {12,3,2012},2},
@@ -423,9 +425,9 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec)
         printf("7- Sectores con Mujeres\n");
         printf("8- Promedio y Total de Salarios de un Sector\n");
         printf("9- Nacidos <= 2009\n");
-       printf("10- Empleados con el mismo Salario"\n);
-       printf("11- Cant de Hombres x Sector\n");
-       printf("12- Salir\n\n");
+        printf("10- Empleados con el mismo Salario\n");
+        printf("11- Cant de Hombres x Sector\n");
+        printf("12- Salir\n\n");
         printf("Ingrese opcion: ");
         scanf("%d", &opcion);
 
@@ -482,6 +484,16 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec)
             break;
 
         case 10:
+            mismoSalario(x,tam,sec,tamSec);
+            system("pause");
+            break;
+
+        case 11:
+            cantHombres(x,tam,sec,tamSec);
+            system("pause");
+            break;
+
+        case 12:
             printf("\nConfirma salida s/n?: ");
             fflush(stdin);
             confirma = getche();
@@ -774,3 +786,66 @@ void menorIgual2009(eEmpleado x[], int tam, eSector sec[], int tamSec)
     }
 }
 
+void mismoSalario(eEmpleado x[], int tam, eSector sec[], int tamSec)
+{
+    int cont=0;
+    int conjunto[tam];
+    int flag = 0;
+
+    for(int j=0;j<tam;j++)
+    {
+        conjunto[j] = 0;
+    }
+
+    for(int i=0; i<tamSec; i++)
+    {
+        for(int j=0; j<tam; j++)
+        {
+            conjunto[j]++;
+
+            if((flag == 0) || (x[j].sector == sec[i].id && x[j].ocupado == 1))
+            {
+                flag = 1;
+            }
+        }
+    }
+
+    for(int j=0;j<tam;j++)
+    {
+        if(flag == 1 && x[j].ocupado == 1 && conjunto[j] == x[j].sueldo)
+        {
+           cont++;
+        }
+    }
+
+    if(cont == 0)
+    {
+        printf("Ningun empleado tiene el mismo sueldo\n");
+    }
+}
+
+void cantHombres(eEmpleado x[], int tam, eSector sec[], int tamSec)
+{
+    int cont = 0;
+
+    for(int i=0; i<tamSec; i++)
+    {
+
+        for(int j=0; j<tam; j++)
+        {
+            if(x[j].sector == sec[i].id && x[j].ocupado == 1 && x[j].sexo == 'm')
+            {
+                cont++;
+            }
+        }
+
+    }
+
+    printf("\n\n");
+    printf("Total de hombres x Sector: %d\n\n",cont);
+
+    if(cont == 0)
+    {
+        printf("No hay ningun hombre\n");
+    }
+}
