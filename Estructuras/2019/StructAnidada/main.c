@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <conio.h>
 #include <string.h>
+
 #define TAM 15
 #define SEC 4
 #define COM 5
@@ -593,7 +594,7 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec, eComida com[
             break;
 
         case 15:
-
+            almuerzosXdescrip(x,tam,com,tamCom,alm,tamAlm,sec,tamSec);
             break;
 
         case 16:
@@ -1139,6 +1140,7 @@ void almuerzosXfecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerz
     int dia;
     int mes;
     int anio;
+    int flag = 0;
 
     system("cls");
 
@@ -1151,12 +1153,59 @@ void almuerzosXfecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerz
         {
 
             mostrarAlmuerzo(alm[i],x,tam,com,tamCom);
+            flag = 1;
 
 
         }
 
     }
 
+    if(flag == 0)
+    {
+        printf("Nadie almorzo este dia\n");
+    }
+
 }
 
+void almuerzosXdescrip(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
+{
+    char descrip[20];
+    int flag = 0;
 
+    system("cls");
+
+    listarComidas(com,tamCom);
+
+    printf("Ingrese la comida a buscar: ");
+    fflush(stdin);
+    gets(descrip);
+
+    printf("\n\n");
+
+    for(int i=0; i<tamAlm; i++)
+    {
+        for(int j=0; j<tam; j++)
+        {
+            if(x[j].ocupado == 1)
+            {
+                for(int k=0; k<tamCom; k++)
+                {
+                    if(stricmp(com[k].descripcion,descrip) == 0)
+                    {
+                        flag = 1;
+
+                        break;
+
+                    }
+
+                }
+            }
+
+        }
+    }
+
+    if(flag == 0)
+    {
+        printf("Este empleado no tiene ningun almuerzo registrado\n");
+    }
+}
