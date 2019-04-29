@@ -82,6 +82,9 @@ void mostrarAlmuerzos(eAlmuerzo alm[], int tamAlm, eEmpleado emp[], int tam, eCo
 void mostrarAlmuerzo(eAlmuerzo alm, eEmpleado emp[], int tam, eComida com[], int tamCom);
 void almuerzosXemp(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
 void almuerzosXfecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
+void almuerzosXdescrip(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
+void almuerzosXmismaFecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm);
+void almuerzosMasComido(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm);
 
 int main()
 {
@@ -411,7 +414,7 @@ void harcodeEmpleado(eEmpleado vec[], int tam)
         {8944, "Sonia", 'f', 39000,1, {12,3,2012},2},
         {2231, "Miguel", 'm', 29700,1, {28,7,2009},2},
         {6578, "Adrian", 'm', 43200,1, {11,1,2016}, 3},
-        {3425, "Lucia", 'f', 32300,0, {19,10,2004},3},
+        {3425, "Carolina", 'f', 32300,1, {19,10,2004},3},
         {7654, "Diego", 'm', 35000,0, {23,6,2010}, 2},
         {3456, "Mirta", 'f', 30000,1, {2,7,2009},1},
         {4567, "Ximena", 'f', 35000,1, {2,9,1995},2},
@@ -453,17 +456,17 @@ void harcodeAlmuerzos(eAlmuerzo x[], int tam)
         {101,2222,3,{13,4,2019}},
         {102,2211,2,{13,4,2019}},
         {103,3241,4,{15,4,2019}},
-        {104,8944,5,{16,4,2019}},
+        {104,8944,5,{13,4,2019}},
         {105,2231,1,{17,4,2019}},
         {106,6578,3,{17,4,2019}},
         {107,3425,5,{17,4,2019}},
-        {108,8944,4,{20,4,2019}},
-        {109,7654,2,{21,4,2019}},
+        {108,8944,4,{24,4,2019}},
+        {109,7654,2,{25,4,2019}},
         {110,8944,1,{12,4,2019}},
         {111,3456,3,{13,4,2019}},
         {112,8944,2,{13,4,2019}},
         {113,4567,4,{15,4,2019}},
-        {114,8900,5,{16,4,2019}},
+        {114,8900,5,{26,4,2019}},
         {115,1234,2,{17,4,2019}},
         {116,6599,3,{17,4,2019}},
         {117,3234,5,{17,4,2019}},
@@ -598,7 +601,7 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec, eComida com[
             break;
 
         case 16:
-
+            almuerzosXmismaFecha(x,tam,com,tamCom,alm,tamAlm);
             break;
 
         case 17:
@@ -959,45 +962,12 @@ void cantHombres(eEmpleado x[], int tam, eSector sec[], int tamSec)
     }
 }
 
-/*void empMasPerdedor(eEmpleado x[], int tam, eSector sec[], int tamSec)
-{
-    float menor;
-    int flag;
-
-    for(int i=0;i<tamSec;i++)
-    {
-        menor = 0;
-        flag = 0;
-
-        for(int j=0;j<tam;j++)
-        {
-            if((x[j].sueldo < menor || flag == 0) && x[j].ocupado == 1 && x[j].sector == sec[i].id)
-            {
-                x[j].sueldo = menor;
-
-                flag = 1;
-
-                for(int j=0;j<tam;j++)
-    {
-        if(x[j].sueldo == menor && x[j].ocupado == 1 && x[j].sector == sec[i].id)
-        {
-           mostrarEmpleado(x[j],sec,tamSec);
-        }
-    }
-
-            }
-        }
-        }
-
-}*/
-
 void empMasPerdedor(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
     float menor;
 
     for(int i=0; i<tamSec; i++)
     {
-        //menor=x[i].sueldo;
         menor = 99999;
 
         for(int j=0; j<tam; j++)
@@ -1137,32 +1107,40 @@ void almuerzosXemp(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo 
 
 void almuerzosXfecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
 {
-    int dia;
-    int mes;
-    int anio;
     int flag = 0;
+    eFecha fecha;
 
     system("cls");
 
     printf("Ingrese fecha de ingreso dd/mm/aaaa: ");
-    scanf("%d %d %d", &dia, &mes, &anio);
+    scanf("%d %d %d", &fecha.dia, &fecha.mes, &fecha.anio);
 
     for(int i=0; i<tamAlm; i++)
     {
-        if(alm[i].fecha.dia == dia && alm[i].fecha.mes == mes && alm[i].fecha.anio == anio)
+        for(int j=0; j<tam; j++)
         {
+            if(compararFechas(alm[i].fecha,fecha) && alm[i].idEmpleado == x[j].legajo && x[j].ocupado == 1)
+            {
 
-            mostrarAlmuerzo(alm[i],x,tam,com,tamCom);
-            flag = 1;
+                for(int j=0; j<tam; j++)
+                {
+                    if(x[j].ocupado == 1)
+                    {
+                        flag = 1;
+                        mostrarAlmuerzo(alm[i],x,tam,com,tamCom);
+                        break;
+                    }
+                }
 
+
+            }
 
         }
-
     }
 
     if(flag == 0)
     {
-        printf("Nadie almorzo este dia\n");
+        printf("Ningun empleado almorzo este dia\n");
     }
 
 }
@@ -1186,26 +1164,55 @@ void almuerzosXdescrip(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmue
     {
         for(int j=0; j<tam; j++)
         {
-            if(x[j].ocupado == 1)
+            for(int k=0; k<tamCom; k++)
             {
-                for(int k=0; k<tamCom; k++)
+                if(x[j].ocupado == 1 && x[j].legajo == alm[i].idEmpleado && stricmp(com[k].descripcion,descrip)==0 && com[k].id == alm[i].idComida)
                 {
-                    if(stricmp(com[k].descripcion,descrip) == 0)
-                    {
-                        flag = 1;
-
-                        break;
-
-                    }
-
+                    flag = 1;
+                    mostrarEmpleado(x[j],sec,tamSec);
                 }
             }
-
         }
     }
 
     if(flag == 0)
     {
-        printf("Este empleado no tiene ningun almuerzo registrado\n");
+        printf("Nadie almorzo esta comida\n");
     }
+}
+
+void almuerzosXmismaFecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm)
+{
+
+    for(int i=0; i<tamAlm; i++)
+    {
+        //alm[i].fecha.dia == alm[i].fecha.dia && alm[i].fecha.mes == alm[i].fecha.mes && alm[i].fecha.anio == alm[i].fecha.anio
+        if(compararFechas(alm[i].fecha,alm[i].fecha))
+        {
+            for(int j=0; j<tam; j++)
+            {
+                if(x[j].ocupado == 1 && x[j].legajo == alm[i].idEmpleado)
+                {
+                    mostrarAlmuerzo(alm[i],x,tam,com,tamCom);
+                    break;
+                }
+            }
+        }
+    }
+}
+
+void almuerzosMasComido(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm)
+{
+
+}
+
+int compararFechas(eFecha fech, eFecha fecha)
+{
+    int igual = 0;
+
+    if(fech.dia == fecha.dia && fech.mes == fecha.mes && fech.anio == fecha.anio)
+    {
+        igual = 1;
+    }
+    return igual;
 }
