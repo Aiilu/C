@@ -1,12 +1,5 @@
 # depslib dependency file v1.0
-1556290472 source:c:\users\e76b73a\desktop\ansi_c\structanidada\main.c
-	<stdio.h>
-	<stdlib.h>
-	<ctype.h>
-	<conio.h>
-	<string.h>
-
-1556326296 source:c:\users\alumno\desktop\prog\estructuras\2019\structanidada\main.c
+1556404716 source:c:\users\usuario\desktop\structanidada\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
