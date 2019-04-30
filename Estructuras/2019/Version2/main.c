@@ -608,7 +608,7 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec, eComida com[
             break;
 
         case 17:
-
+            almuerzosMasComido2(x,tam,com,tamCom,alm,tamAlm,sec,tamSec);
             break;
 
 
@@ -1260,25 +1260,48 @@ void almuerzosXsector(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuer
 
 void almuerzosMasComido2(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
 {
-   int cont[tamAlm];
+    int cont[tamCom];
+    int flag = 0;
+    int mayor;
 
-   for(int i=0;i<tamAlm;i++)
-   {
-       cont[i]=0;
+    for(int i=0; i<tamCom; i++)
+    {
+          cont[i] = 0;
 
-       for(int j=0;j<tamCom;j++)
-       {
-
-                   if(com[j].id == alm[i].idComida)
-                   {
+          for(int j=0;j<tamAlm;j++)
+          {
+              if(com[i].id == alm[j].idComida)
+              {
+                for(int k=0;k<tam;k++)
+                {
+                    if(x[k].ocupado == 1 && x[k].legajo == alm[j].idEmpleado)
+                    {
                        cont[i]++;
-                   }
-           }
-       }
 
-       for(int i=0;i<tamAlm;i++)
-       {
+                    }
+                }
+              }
+          }
+    }
 
-       }
+    for(int i=0;i<tamCom;i++)
+    {
+        if(flag == 0 || cont[i]>mayor)
+        {
+            mayor =  cont[i];
 
-   }
+            flag = 1;
+        }
+    }
+
+
+    printf("Comida mas pedida por los empleados:\n");
+
+    for(int i=0;i<tamCom;i++)
+    {
+        if(cont[i] == mayor)
+        {
+            printf("%s\n",com[i].descripcion);
+        }
+    }
+}
