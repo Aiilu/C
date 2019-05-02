@@ -1,12 +1,5 @@
 # depslib dependency file v1.0
-1556580402 source:c:\users\alumno\desktop\lab\estructuras\2019\version2\main.c
-	<stdio.h>
-	<stdlib.h>
-	<ctype.h>
-	<conio.h>
-	<string.h>
-
-1556633449 source:c:\users\usuario\desktop\laboratorio\estructuras\2019\version2\main.c
+1556819400 source:c:\users\e76b73a\desktop\ansi_c\version2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>

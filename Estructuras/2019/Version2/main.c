@@ -38,6 +38,7 @@ typedef struct
 {
     int id;
     char descripcion[20];
+    float precio;
 } eComida;
 
 typedef struct
@@ -87,6 +88,12 @@ void almuerzosXmismaFecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAl
 int compararFechas(eFecha fech, eFecha fecha);
 void almuerzosXsector(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
 void almuerzosMasComido2(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
+void totalXfecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
+void importesEmpleado(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
+void AlmuerzosXhombres(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
+void AlmuerzosMasComidosXmujeres(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
+void empleadosQueNoAlmorzaron(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
+void almuerzosEmpMasPerdedor(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec);
 
 int main()
 {
@@ -96,11 +103,12 @@ int main()
     eSector sector[SEC];
     eComida comida[COM];
     eAlmuerzo almuerzo[ALM];
-    //inicializarEmpleados(lista, TAM); // llamada
     harcodeEmpleado(lista,TAM);
     harcodeSectores(sector,SEC);
     harcodeComidas(comida,COM);
     harcodeAlmuerzos(almuerzo,ALM);
+
+    //inicializarEmpleados(lista, TAM); // llamada
 
     do
     {
@@ -436,11 +444,11 @@ void harcodeComidas(eComida x[], int tam)
 {
     eComida hardcode[]=
     {
-        {1, "Milanesa"},
-        {2, "Pescado"},
-        {3, "Tortilla"},
-        {4, "Salmon"},
-        {5, "Empanadas"}
+        {1, "Milanesa",80},
+        {2, "Pescado",90},
+        {3, "Tortilla",100},
+        {4, "Salmon",150},
+        {5, "Empanadas",105}
 
     };
 
@@ -461,7 +469,7 @@ void harcodeAlmuerzos(eAlmuerzo x[], int tam)
         {104,8944,5,{13,4,2019}},
         {105,2231,1,{17,4,2019}},
         {106,6578,3,{17,4,2019}},
-        {107,3425,5,{17,4,2019}},
+        //{107,3425,5,{17,4,2019}},
         {108,8944,4,{24,4,2019}},
         {109,7654,2,{25,4,2019}},
         {110,8944,1,{12,4,2019}},
@@ -531,11 +539,13 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec, eComida com[
         printf("16- Mostrar Almuerzos del mismo Dia\n");
         printf("17- Mostrar el almuerzo mas comido\n");
         printf("18- Almuerzos x Sector\n");
-        printf("19- Almuerzos no comidos\n");
+        printf("19- Clientes que no comieron\n");
         printf("20- Almuerzos x Hombres\n");
-        printf("21- Cant de Almuerzos de Mujeres\n");
+        printf("21- Comidas + comidas x Mujeres\n");
         printf("22- Almuerzos de los empleados mas perdedores\n");
-        printf("23- Salir\n\n");
+        printf("23- Importes pagados x Cliente\n");
+        printf("24- Recaudacion x Fecha\n");
+        printf("25- Salir\n\n");
         printf("Ingrese opcion: ");
         scanf("%d", &opcion);
 
@@ -619,22 +629,30 @@ void menuInformes(eEmpleado x[],int tam, eSector sec[], int tamSec, eComida com[
             break;
 
         case 19:
-
+            empleadosQueNoAlmorzaron(x,tam,com,tamCom,alm,tamAlm,sec,tamSec);
             break;
 
         case 20:
-
+            AlmuerzosXhombres(x,tam,com,tamCom,alm,tamAlm,sec,tamSec);
             break;
 
         case 21:
-
+            AlmuerzosMasComidosXmujeres(x,tam,com,tamCom,alm,tamAlm,sec,tamSec);
             break;
 
         case 22:
-
+            almuerzosEmpMasPerdedor(x,tam,com,tamCom,alm,tamAlm,sec,tamSec);
             break;
 
         case 23:
+            importesEmpleado(x,tam,com,tamCom,alm,tamAlm,sec,tamSec);
+            break;
+
+        case 24:
+            totalXfecha(x,tam,com,tamCom,alm,tamAlm,sec,tamSec);
+            break;
+
+        case 25:
             printf("\nConfirma salida s/n?: ");
             fflush(stdin);
             confirma = getche();
@@ -751,10 +769,17 @@ void totalEmpxSector(eEmpleado x[], int tam, eSector sec[], int tamSec)
 
     }
 
+    if(cont == 0)
+    {
+        printf("No hay empleados que contar\n");
+    }
+
 }
 
 void empXsector(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
+
+    int flag = 0;
 
     for(int i=0; i<tamSec; i++)
     {
@@ -767,9 +792,15 @@ void empXsector(eEmpleado x[], int tam, eSector sec[], int tamSec)
             if(x[j].sector == sec[i].id && x[j].ocupado == 1)
             {
                 mostrarEmpleado(x[j],sec,tamSec);
+                flag = 1;
             }
 
         }
+    }
+
+    if(flag == 0)
+    {
+        printf("No hay empleados que mostrar\n");
     }
 }
 
@@ -823,24 +854,17 @@ void empMasGanadorXsector(eEmpleado x[], int tam, eSector sec[], int tamSec)
     {
         flag = 0;
         mayor = 0;
+
         for(int j=0; j<tam; j++)
         {
 
             if( (x[j].sueldo > mayor || flag ==0) && x[j].sector == sec[i].id && x[j].ocupado == 1 )
             {
                 mayor = x[j].sueldo;
-
-                flag = 1;
             }
 
         }
 
-        if(flag == 0)
-        {
-            printf("Esta vacio\n");
-        }
-        else
-        {
             for(int j=0; j<tam; j++)
             {
                 if(x[j].sueldo == mayor && x[i].ocupado == 1 && x[j].sector == sec[i].id )
@@ -849,19 +873,13 @@ void empMasGanadorXsector(eEmpleado x[], int tam, eSector sec[], int tamSec)
                 }
             }
         }
-    }
 
-}
-
-void empMasPerdedor2(eEmpleado x[], int tam, eSector sec[], int tamSec)
-{
-    RECORRO LOS SECTORES
-    RECORRO A LOS EMPLEADOS BUSCANDO EL QUE SEA MAYOR O QUE EL FLAG ESTE EN CERO, ASI ENTRA UNIA UNICA VEZ. ME FIJO SI ESTA OCUPADO Y DISCRIMINO X SECTOR.
-    DSP SOLAMENTE ME FIJO RECORRIENDO A LOS EMPLEADOS, SI EL SUEDLO ES IGUAL AL MAYOR CALCULADO, SI ESTA OCUPADO Y DISCRIMINO POR SECTOR.
 }
 
 void sectorMujeres(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
+    int flag = 0;
+
     for(int i=0; i<tamSec; i++)
     {
 
@@ -871,9 +889,15 @@ void sectorMujeres(eEmpleado x[], int tam, eSector sec[], int tamSec)
             {
                 printf("Sector: %s\n",sec[i].descripcion);
                 mostrarEmpleado(x[j],sec,tamSec);
+                flag = 1;
 
             }
         }
+    }
+
+    if(flag == 0)
+    {
+        printf("No hay ninguna mujer\n");
     }
 }
 
@@ -917,6 +941,8 @@ void promSector(eEmpleado x[], int tam, eSector sec[], int tamSec)
 
 void menorIgual2009(eEmpleado x[], int tam, eSector sec[], int tamSec)
 {
+    int flag = 0;
+
     for(int i=0; i<tamSec; i++)
     {
         for(int j=0; j<tam; j++)
@@ -925,8 +951,14 @@ void menorIgual2009(eEmpleado x[], int tam, eSector sec[], int tamSec)
             {
                 printf("Sector: %s\n",sec[i].descripcion);
                 mostrarEmpleado(x[j],sec,tamSec);
+                flag = 1;
             }
         }
+    }
+
+    if(flag == 0)
+    {
+        printf("No hay ningun empleado con el anio <=2009");
     }
 }
 
@@ -954,7 +986,7 @@ void mismoSalario(eEmpleado x[], int tam, eSector sec[], int tamSec)
 
         if(flag == 0)
         {
-            printf("Esta vacio\n");
+            printf("Ningun empleado tiene el mismo salario\n");
         }
         else
         {
@@ -1031,8 +1063,6 @@ void mostrarAlmuerzo(eAlmuerzo alm, eEmpleado emp[], int tam, eComida com[], int
     char comida[20];
     int loMuestro;
 
-
-
     for(int i=0; i<tam; i++)
     {
         if(emp[i].legajo == alm.idEmpleado)
@@ -1055,7 +1085,7 @@ void mostrarAlmuerzo(eAlmuerzo alm, eEmpleado emp[], int tam, eComida com[], int
 
     if(loMuestro)
     {
-        printf("%4d %d %10s %10s %02d/%02d/%d\n", alm.id, alm.idEmpleado, nombre, comida, alm.fecha.dia, alm.fecha.mes, alm.fecha.anio);
+        printf("%4d %d %10s %10s %02d/%02d/%d %.2f\n", alm.id, alm.idEmpleado, nombre, comida, alm.fecha.dia, alm.fecha.mes, alm.fecha.anio);
     }
 }
 
@@ -1086,7 +1116,7 @@ void listarComidas(eComida x[], int tam)
 
     for(int i=0; i<tam; i++)
     {
-        printf(" %d   %s\n",x[i].id,x[i].descripcion);
+        printf(" %d   %s\n",x[i].id,x[i].descripcion, x[i].precio);
     }
 }
 
@@ -1144,6 +1174,10 @@ void almuerzosXemp(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo 
 
 void almuerzosXfecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
 {
+    /*eFecha fecha;
+    printf("Ingrese fecha dd mm aaaa: ");
+    scanf("%d %d %d", &fecha.dia, &fecha.mes, &fecha.anio);*/
+
     int flag = 0;
     eFecha fecha;
 
@@ -1220,9 +1254,7 @@ void almuerzosXdescrip(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmue
 
 void almuerzosXmismaFecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm)
 {
-    /*eFecha fecha;
-    printf("Ingrese fecha dd mm aaaa: ");
-    scanf("%d %d %d", &fecha.dia, &fecha.mes, &fecha.anio);*/
+    int flag = 0;
 
     for(int i=0; i<tamAlm; i++)
     {
@@ -1234,9 +1266,15 @@ void almuerzosXmismaFecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAl
                 if(x[j].ocupado == 1 && x[j].legajo == alm[i].idEmpleado)
                 {
                     mostrarAlmuerzo(alm[j],x,tam,com,tamCom);
+                    flag = 1;
                 }
             }
         }
+    }
+
+    if(flag == 0)
+    {
+        printf("Nadie almorzo la misma fecha\n");
     }
 }
 
@@ -1254,6 +1292,7 @@ int compararFechas(eFecha fech, eFecha fecha)
 void almuerzosXsector(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
 {
     int sector;
+    int flag = 0;
 
     listarSectores(sec,tamSec);
 
@@ -1273,6 +1312,7 @@ void almuerzosXsector(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuer
                         if(alm[j].idComida == com[k].id)
                         {
                             printf("%s %s %0d/%0d/%d\n",x[i].nombre,com[k].descripcion,alm[j].fecha);
+                            flag = 1;
                             break;
                         }
                     }
@@ -1280,6 +1320,11 @@ void almuerzosXsector(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuer
                 }
             }
         }
+    }
+
+    if(flag == 0)
+    {
+        printf("Nadie en este sector almorzo\n");
     }
 }
 
@@ -1328,5 +1373,206 @@ void almuerzosMasComido2(eEmpleado x[], int tam, eComida com[], int tamCom, eAlm
         {
             printf("%s\n",com[i].descripcion);
         }
+    }
+}
+
+void almuerzosEmpMasPerdedor(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
+{
+
+}
+
+void empleadosQueNoAlmorzaron(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
+{
+   int flag;
+
+   for(int i=0;i<tam;i++)
+   {
+       flag = 0;
+
+       for(int j=0;j<tamAlm;j++)
+       {
+           if(x[i].legajo == alm[j].idEmpleado)
+           {
+               for(int k=0;k<tamCom;k++)
+               {
+                   if(com[k].id == alm[j].idComida)
+                   {
+                       flag = 1;
+                       break;
+                   }
+               }
+           }
+       }
+
+       if(flag == 0)
+       {
+           printf("Empleados que no almorzaron\n");
+
+           mostrarEmpleado(x[i],sec,tamSec);
+           break;
+
+       }
+
+    }
+
+    if(flag == 1)
+    {
+        printf("Todos los empleados almorzaron\n");
+    }
+
+}
+
+void AlmuerzosMasComidosXmujeres(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
+{
+    int mayor;
+    int flag=0;
+    int mujeres[tamCom];
+
+
+    for(int i=0; i<tamCom; i++)
+    {
+        mujeres[i] = 0;
+
+        for(int j=0; j<tamAlm;j++)
+        {
+            if(com[i].id == alm[j].idComida)
+            {
+                for(int k=0;k<tam;k++)
+                {
+                    if(x[k].ocupado == 1 && x[k].sexo == 'f' && x[k].legajo == alm[j].idEmpleado)
+                    {
+                        mujeres[i]++;
+                    }
+                }
+
+            }
+        }
+    }
+
+    for(int i=0; i<tamCom; i++)
+    {
+        if(mujeres[i] > mayor || flag == 0)
+        {
+            mayor = mujeres[i];
+
+            flag = 1;
+        }
+    }
+
+    printf("Almuerzos + comidos por Mujeres:\n");
+
+    for(int i=0; i<tam; i++)
+    {
+        if(mujeres[i] == mayor)
+        {
+           printf("%s\n",com[i].descripcion);
+        }
+    }
+}
+
+void AlmuerzosXhombres(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
+{
+      int flag = 0;
+
+      for(int i=0;i<tamAlm;i++)
+      {
+          for(int j=0;j<tam;j++)
+          {
+              if(x[j].legajo == alm[i].idEmpleado && x[j].ocupado == 1 && x[j].sexo == 'm')
+              {
+                  for(int k=0;k<tamCom;k++)
+                  {
+                      if(com[k].id == alm[i].idComida)
+                      {
+                        mostrarAlmuerzo(alm[i],x,tam,com,tamCom);
+                        flag = 1;
+                      }
+                  }
+              }
+          }
+      }
+
+      if(flag == 0)
+      {
+          printf("No hay almuerzos registrados\n");
+      }
+}
+
+void importesEmpleado(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
+{
+      float total = 0;
+      int flag = 0;
+      int legajo;
+
+      mostrarEmpleados(x,tam,sec,tamSec);
+
+      printf("Ingrese el legajo a buscar el importe: ");
+      scanf("%d",&legajo);
+
+      for(int i=0;i<tamAlm;i++)
+      {
+          if(alm[i].idEmpleado == legajo)
+          {
+              for(int j=0;j<tamCom;j++)
+              {
+                  if(alm[i].idComida == com[j].id)
+                  {
+                      total+=com[j].precio;
+                      flag = 1;
+                      break;
+                  }
+              }
+          }
+      }
+
+      if(flag == 0)
+      {
+          printf("Este empleado no ha almorzado nada\n");
+      }
+      else
+      {
+          printf("Importe total: %.2f\n",total);
+      }
+}
+
+void totalXfecha(eEmpleado x[], int tam, eComida com[], int tamCom, eAlmuerzo alm[], int tamAlm, eSector sec[], int tamSec)
+{
+    float total = 0;
+    int flag = 0;
+
+    eFecha fecha;
+
+    printf("Ingrese fecha aa/mm/aaaa: ");
+    scanf("%d %d %d",&fecha.dia,&fecha.mes,&fecha.anio);
+
+    for(int i=0; i<tamAlm; i++)
+    {
+        if(compararFechas(alm[i].fecha,fecha))
+        {
+            for(int j=0;j<tam;j++)
+            {
+                if(x[j].ocupado == 1 && x[j].legajo == alm[i].idEmpleado)
+                {
+                    for(int k=0;k<tamCom;k++)
+                    {
+                        if(com[k].id == alm[i].idComida)
+                        {
+                            total+=com[k].precio;
+                            flag = 1;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if(flag == 0)
+    {
+        printf("No hay importes acumulados en esta fecha\n");
+    }
+    else
+    {
+        printf("Total recaudado en la fecha %0d/%0d/%d: %.2f\n",fecha.dia,fecha.mes,fecha.anio,total);
     }
 }
