@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1557345804 source:d:\modelo parcial\peliculasabm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+
+1557360170 source:e:\modelo parcial\peliculasabm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+
