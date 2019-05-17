@@ -5,7 +5,11 @@ void funcionModificadora(int* p);
 
 int main()
 {
-    int x = 100;
+    int x;
+
+    printf("Ingrese un numero: ");
+    scanf("%d",&x);
+
     int* q;
     int* p;
 
@@ -17,9 +21,11 @@ int main()
 
     p = q;
 
+    //0x los punteros empiezan con 0x
+
     printf("P es igual a Q?\n");
 
-    if(p==q)
+    if(p == q)
     {
         printf("Si\n");
     }
