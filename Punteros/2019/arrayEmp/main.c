@@ -30,7 +30,7 @@ int main()
 
     pEmp = &lista;
 
-    mostrarEmpleados(lista,3);
+    mostrarEmpleados(pEmp,3);
 
     return 0;
 }
@@ -42,6 +42,8 @@ void mostrarEmpleado(eEmpleado* pEmp)
 
 void mostrarEmpleados(eEmpleado* pEmp, int tam)
 {
+    printf("Legajo Nombre Sueldo Sexo Fecha\n");
+
     for(int i=0; i<tam; i++)
     {
         mostrarEmpleado(pEmp+i);
