@@ -15,6 +15,9 @@ int main()
     {
        printf("%c", *p);
        p++;
+       //p = p+1;
+       //preg si es diferente de \0, si no, muestra la letra siguiente, y ahi hace p++ y asi hasta
+       //encontrar el \0
     }
 
     return 0;
