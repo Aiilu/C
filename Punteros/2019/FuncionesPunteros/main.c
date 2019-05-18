@@ -10,13 +10,19 @@ int main()
 {
     int vec[] = {3,2,6,4,5};
 
-    //f1(vec,5);
+    f1(vec,5);
 
-    //f2(vec,5);
+    printf("\n");
 
-    //f3(&vec,5);
+    f2(vec,5);
 
-    f3(&vec,5);
+    printf("\n");
+
+    f3(vec,5);
+
+    printf("\n");
+
+    f4(vec,5);
 
     return 0;
 }
