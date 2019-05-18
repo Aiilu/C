@@ -47,3 +47,11 @@ void mostrarEmpleados(eEmpleado* pEmp, int tam)
         mostrarEmpleado(pEmp+i);
     }
 }
+
+/*void mostrarEmpleados(eEmpleado* pEmp, int tam)
+{
+    for(int i=0; i<tam; i++)
+    {
+        printf("%d %s %.2f %c %02d/%02d/%d\n",pEmp+i->legajo,pEmp+i->nombre,pEmp+i->sueldo,pEmp+i->sexo,pEmp+i->fecha.dia,pEmp+i->fecha.mes,pEmp+i->fecha.anio);
+    }
+}*/
