@@ -21,7 +21,7 @@ int main()
 
     p = q;
 
-    //0x los punteros empiezan con 0x
+    //Los punteros empiezan con 0x
 
     printf("P es igual a Q?\n");
 
