@@ -13,16 +13,18 @@ int main()
         system("pause");
         exit(1);
     }
-
-    for(int i=0; i<5; i++)
+    else
     {
-      printf("Ingrese un numero: ");
-      scanf("%d",pNum+i);
-    }
+        for(int i=0; i<5; i++)
+        {
+            printf("Ingrese un numero: ");
+            scanf("%d",pNum+i);
+        }
 
-    for(int i=0; i<5; i++)
-    {
-        printf("%d\n",*(pNum+i));
+        for(int i=0; i<5; i++)
+        {
+            printf("%d\n",*(pNum+i));
+        }
     }
 
     return 0;

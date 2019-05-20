@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1558359360 source:c:\users\e76b73a\desktop\abm2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1558379000 source:d:\utn\punteros\abm2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
