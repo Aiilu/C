@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1557258672 source:d:\modelo parcial\alquilerjuegosabm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557418840 source:e:\modelo parcial\alquilerjuegosabm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
