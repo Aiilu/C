@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void pedirNumero(int *pNumero);
+
 int main()
 {
     int* pNum;
@@ -19,6 +21,8 @@ int main()
 
        printf("%d",*pNum);
     }
+
+    free(pNum);
 
     return 0;
 }
