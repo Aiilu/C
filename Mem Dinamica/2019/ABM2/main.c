@@ -28,8 +28,6 @@ int buscarLibre(eEmpleado*,int);
 
 int buscarXid(eEmpleado*,int,int);
 
-int cargarID();
-
 void darAlta(eEmpleado*,int,int*);
 
 void mostrarEmpleado(eEmpleado* x);
@@ -38,7 +36,7 @@ void mostrarEmpleados(eEmpleado*,int);
 
 void darModificacion(eEmpleado*,int);
 
-int darBaja(eEmpleado*,int);
+void darBaja(eEmpleado*,int);
 
 void ordenar(eEmpleado[],int);
 
@@ -65,6 +63,8 @@ int main()
     {
         //INICIALIZO?
         //EL 0 Y EL 1 SE USAN?
+        //ALTA
+        //ELIMINAR
         inicializarX(pEmp,T);
 
         menuPrincipal(pEmp,T);
@@ -83,9 +83,12 @@ int main()
 
 void inicializarX(eEmpleado* x,int tam)
 {
-    for(int i=0; i<tam; i++)
+    if(x !=NULL)
     {
-        (x+i)->isEmpty = VACIO;
+        for(int i=0; i<tam; i++)
+        {
+            (x+i)->isEmpty = VACIO;
+        }
     }
 }
 
@@ -149,24 +152,7 @@ void menuPrincipal(eEmpleado* x,int tam)
             if(flag == 1)
             {
                 system("cls");
-                if(darBaja(x,tam)==0)
-                {
-                    printf("\n\n");
-                    printf("     Es NULL\n");
-                    system("pause");
-                }
-                else if(darBaja(x,tam)==1)
-                {
-                    printf("\n\n");
-                    printf("     Empleado borrado con exito\n");
-                    system("pause");
-                }
-                else
-                {
-                    printf("\n\n");
-                    printf("     Baja cancelada\n");
-                    system("pause");
-                }
+                darBaja(x,tam);
             }
             else
             {
@@ -319,6 +305,7 @@ eEmpleado* new_Empleado()
         strcpy(nuevo->apellido, "");
         nuevo->sueldo = 0;
         nuevo->sector = 0;
+        nuevo->isEmpty = 0;
     }
 
 
@@ -337,89 +324,100 @@ void darAlta(eEmpleado* x,int tam,int* pId)
     char sueldo[10];
     char sector[5];
 
-    do
+    if(x==NULL)
     {
-
-        system("cls");
-
-        printf("     =================================================\n");
-        printf("     #                                               #\n");
-        printf("     #              >>>> Alta Empleado <<<<          #\n");
-        printf("     #                                               #\n");
-        printf("     =================================================\n");
-
-
-        //ESTO ESTA BIEN?
-        eEmpleado* empleado = new_Empleado();
-
-        index = buscarLibre(x,tam);
-
-        if(index == -1)
-        {
-            printf("     No hay mas espacio para cargar\n");
-            printf("\n\n");
-            system("pause");
-            break;
-        }
-        else
-        {
-            empleado->id = idEmpleado;
-
-            printf("     Ingrese nombre: ");
-            fflush(stdin);
-            gets(nombre);
-
-            validarString(nombre);
-
-            strcpy(empleado->nombre,nombre);
-
-            printf("     Ingrese apellido: ");
-            fflush(stdin);
-            gets(apellido);
-
-            validarString(apellido);
-
-            strcpy(empleado->apellido,apellido);
-
-            printf("     Ingrese sueldo: ");
-            fflush(stdin);
-            gets(sueldo);
-
-            empleado->sueldo = validarFloat(sueldo);
-
-            printf("     Ingrese sector: ");
-            fflush(stdin);
-            gets(sector);
-
-            empleado->sector = validarEntero(sector);
-
-            empleado->isEmpty = OCUPADO;
-
-            *(x+index) = *empleado;
-
-            printf("\n\n");
-
-            printf("     Empleado cargado con exito!!\n");
-
-            printf("\n\n");
-
-            *pId = idEmpleado++;
-
-            seguir = validarSeguir();
-
-            free(empleado);
-
-        }
-
+        printf("Hubo un error, no se puede dar de Alta\n");
     }
-    while(seguir == 's' || seguir =='S');
+
+    else
+    {
+        do
+        {
+            system("cls");
+
+            printf("     =================================================\n");
+            printf("     #                                               #\n");
+            printf("     #              >>>> Alta Empleado <<<<          #\n");
+            printf("     #                                               #\n");
+            printf("     =================================================\n");
+
+
+            //ESTO ESTA BIEN?
+            eEmpleado* empleado = new_Empleado();
+
+            index = buscarLibre(x,tam);
+
+            if(index == -1)
+            {
+                printf("     No hay mas espacio para cargar\n");
+                printf("\n\n");
+                system("pause");
+                break;
+            }
+            else
+            {
+                empleado->id = idEmpleado;
+
+                printf("     Ingrese nombre: ");
+                fflush(stdin);
+                gets(nombre);
+
+                validarString(nombre);
+
+                strcpy(empleado->nombre,nombre);
+
+                printf("     Ingrese apellido: ");
+                fflush(stdin);
+                gets(apellido);
+
+                validarString(apellido);
+
+                strcpy(empleado->apellido,apellido);
+
+                printf("     Ingrese sueldo: ");
+                fflush(stdin);
+                gets(sueldo);
+
+                empleado->sueldo = validarFloat(sueldo);
+
+                printf("     Ingrese sector: ");
+                fflush(stdin);
+                gets(sector);
+
+                empleado->sector = validarEntero(sector);
+
+                empleado->isEmpty = OCUPADO;
+
+                *(x+index) = *empleado;
+
+                printf("\n\n");
+
+                printf("     Empleado cargado con exito!!\n");
+
+                printf("\n\n");
+
+                *pId = idEmpleado++;
+
+                seguir = validarSeguir();
+
+                free(empleado);
+
+            }
+
+
+        }
+        while(seguir == 's' || seguir =='S');
+    }
 
 }
 
 
 void mostrarEmpleado(eEmpleado* x)
 {
-    printf("%6d %4s %8s %14.2f %7d\n",x->id,x->nombre,x->apellido,x->sueldo,x->sector);
+    if(x !=NULL)
+    {
+        printf("%6d %4s %8s %14.2f %7d\n",x->id,x->nombre,x->apellido,x->sueldo,x->sector);
+    }
 }
 
 void mostrarEmpleados(eEmpleado* x,int tam)
@@ -436,18 +434,25 @@ void mostrarEmpleados(eEmpleado* x,int tam)
     printf("\n\n");
     printf("     ID  Nombre  Apellido    Sueldo     Sector\n\n");
 
-    for(int i=0; i<tam; i++)
+    if(x !=NULL && tam >0)
     {
-        if((x+i)->isEmpty == OCUPADO)
+        for(int i=0; i<tam; i++)
         {
-            cont++;
-            mostrarEmpleado(x+i);
+            if((x+i)->isEmpty == OCUPADO)
+            {
+                cont++;
+                mostrarEmpleado(x+i);
+            }
+        }
+
+        if(cont == 0)
+        {
+            printf("     No hay ningun empleado que mostrar\n");
         }
     }
-
-    if(cont == 0)
+    else
     {
-        printf("     No hay ningun empleado que mostrar\n");
+        printf("     No se pueden mostrar los empleados\n");
     }
 }
 
@@ -463,6 +468,13 @@ void darModificacion(eEmpleado* x,int tam)
     char valOpcion[10];
     char nuevoSalario[10];
     char nuevoSector[5];
+
+     if(x==NULL)
+    {
+        printf("Hubo un error, no se puede Modificar\n");
+    }
+    else
+    {
 
     mostrarEmpleados(x,tam);
 
@@ -623,60 +635,63 @@ void darModificacion(eEmpleado* x,int tam)
             printf("     ERROR. Esta opcion no es correcta\n");
         }
     }
+
+    }
 }
 
 
-int darBaja(eEmpleado* x,int tam)
+void darBaja(eEmpleado* x,int tam)
 {
-    int todoOk = 0;
     int id;
     char valId[10];
     int indice;
     char seguir;
 
-    if(x!=NULL)
+    if(x == NULL)
     {
-        mostrarEmpleados(x,tam);
+        printf("Hubo un error, no se dar de Baja\n");
+    }
+    else
+    {
+    mostrarEmpleados(x,tam);
 
-        printf("\n\n");
+    printf("\n\n");
 
-        printf("     Ingrese ID empleado a eliminar: ");
-        gets(valId);
+    printf("     Ingrese ID empleado a eliminar: ");
+    gets(valId);
 
-        id = validarEntero(valId);
+    id = validarEntero(valId);
 
-        indice = buscarXid(x,tam,id);
+    indice = buscarXid(x,tam,id);
 
-        printf("\n\n");
+    printf("\n\n");
 
-        if(indice == -1)
+    if(indice == -1)
+    {
+        system("pause");
+        printf("     No hay ningun empleado con el ID %d\n",id);
+    }
+    else
+    {
+        system("pause");
+        printf("     ID  Nombre  Apellido    Sueldo     Sector\n\n");
+        mostrarEmpleado((x+indice));
+
+        seguir = validarSeguir();
+
+        if(seguir == 's' || seguir == 'S')
         {
-            system("pause");
-            printf("     No hay ningun empleado con el ID %d\n",id);
-            todoOk = 2;
+            (x+indice)->isEmpty = VACIO;
+            printf("\n\n");
+            printf("     Empleado eliminado con exito\n");
         }
         else
         {
-            system("pause");
-            printf("     ID  Nombre  Apellido    Sueldo     Sector\n\n");
-            mostrarEmpleado((x+indice));
-
-            seguir = validarSeguir();
-
-            if(seguir == 's' || seguir == 'S')
-            {
-                (x+indice)->isEmpty = VACIO;
-                todoOk = 1;
-            }
-            else
-            {
-                system("pause");
-                todoOk = 2;
-            }
+            printf("\n\n");
+            printf("     Baja cancelada\n");
         }
     }
-
-    return todoOk;
+    }
 }
 
 
