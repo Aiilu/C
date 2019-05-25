@@ -343,7 +343,10 @@ void darAlta(eEmpleado* x,int tam,int* pId)
 
 
             //ESTO ESTA BIEN?
+            //NO SE USA ASI X QUE NO ES UN ARRAY DE PUNTEROS
             eEmpleado* empleado = new_Empleado();
+
+            //SE USA UN AUX NORMAL, CAMBIAR ESO
 
             index = buscarLibre(x,tam);
 
