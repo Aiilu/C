@@ -1,0 +1,7 @@
+Id  Nombre  Apellido  Sueldo
+1234 juan gomez 25000.00
+2222 paola joaco 65412.00
+1987031684 torrez torrez 25000.00
+1111 ailen pepito 54689.00
+
+
