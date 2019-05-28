@@ -1,12 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+typedef
+int id;
+char nombre;
+char apellido;
+float sueldo;
+*/
 int main()
 {
-    int num1;
-    int num2;
-    int num3;
-    int num4;
+    /*char cad[30];
+    char cad2[30];
+    char auxCad3[30];
+    char auxCad4[30];*/
+
+    //struct * malloc
+    //*aux
+
+    char buffer[4][30];
+
+    //int cont = 0;
+
     int cant;
 
     FILE* f;
@@ -20,21 +35,41 @@ int main()
         exit(1);
     }
 
+    //1.ACA VA EL FSCANF
+    //2. el printf sin los atoi y atof, que me quede como encabezado, todo puro %s
+
     while(!feof(f))
     {
-        cant = fscanf(f,"%d,%d,%d,%d\n",&num1,&num2,&num3,&num4);
+       // cant = fscanf(f,"%[^,],%[^,],%[^,],%[^\n],\n",cad,cad2,auxCad3,auxCad4);
 
+       //ULT. Cada que  lea, lo cargo aca, y la prox te hago un reallox de uno, y agrando el array y cargo, asi sucesiamente
+       cant = fscanf(f,"%[^,],%[^,],%[^,],%[^\n],\n",buffer[0],buffer[1],buffer[2],buffer[3]);
 
+        //para el espacio en blanco, %[^ ];
+        //esto tamb se puede usar en el scanf, y se levanta como cadena
 
-        printf("%d %d %d %d\n",num1, num2, num3, num4);
+        //el simbolo raro era por que desbordaba, por eso cambia el tam 20 a 30
 
+        //este se va
+        printf("%d %s %s %.2f\n",atoi(buffer[0]), buffer[1], buffer[2], atof(buffer[3]));
 
-           if(feof(f))
+        //https://mockaroo.com/
+        if(cant <4)
+        {
+             if(feof(f))
            {
                break;
            }
+           else
+           {
+               printf("Archivo corrupto\n");
+               break;
+           }
+        }
 
     }
+
+    //ACA VA EL PRIIINTTTF con el atoi y  atof
 
     fclose(f);
 
