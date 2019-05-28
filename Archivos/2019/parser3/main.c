@@ -45,6 +45,7 @@ int main()
        //ULT. Cada que  lea, lo cargo aca, y la prox te hago un reallox de uno, y agrando el array y cargo, asi sucesiamente
        cant = fscanf(f,"%[^,],%[^,],%[^,],%[^\n],\n",buffer[0],buffer[1],buffer[2],buffer[3]);
 
+
         //para el espacio en blanco, %[^ ];
         //esto tamb se puede usar en el scanf, y se levanta como cadena
 
@@ -68,6 +69,16 @@ int main()
         }
 
     }
+
+    //3. (LISTA + CONT)->ID = ATOI(BUFFER[0];
+       //4. STRCPY(LISTA+CONT->NOMBR,E,BUFFER[1]);
+       //5. STRCPY(LISTA+CONT->APELLDIO,E,BUFFER[2]);
+       //6. ESTO LO PUEDO HACER CON EL NER PARAAAAM Y ME AHORRO ESTO
+       //7. CONT++;
+       //8. AUX = REALLOC(LISTA, SIZEOF(EMP),*CONT+1) DE LO QUE TENGO, SIEMPRE UNO MAS
+       /* IF(AUX !=null)
+       {LISTA = AUX];
+       */
 
     //ACA VA EL PRIIINTTTF con el atoi y  atof
 

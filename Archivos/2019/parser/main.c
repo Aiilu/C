@@ -13,6 +13,7 @@ typedef struct
     float sueldo;
     int estado;
 } eEmpleado;
+
 int menu();
 void inicializarEmp(eEmpleado* emp, int tam);
 eEmpleado* new_Empleado();
