@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1559228255 source:c:\users\e76b73a\desktop\ansi_c\archivos\ejerc1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
