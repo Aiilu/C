@@ -49,14 +49,14 @@ int main()
         {
         //verificar con r, por que no existe
         case 1:
-           /* if(cargarEmpleado(lista,size)==0)
+            if(cargarEmpleado(&lista,size)==0)
             {
                 printf("No hay ningun .bin a levantar\n");
             }
             else
             {
                 printf("Cargo exitosamente\n");
-            }*/
+            }
             system("pause");
             break;
         case 2:
@@ -292,11 +292,13 @@ void guardarEmpleadosBinarios(eEmpleado** emp, int size)
         fclose(f);
     }
 }
+*/
 
 int cargarEmpleado(eEmpleado** emp, int size)
 {
+    eEmpleado** aux;
+
     int retorno = 0;
-    int indice;
     FILE* f;
     int cant;
 
@@ -308,11 +310,8 @@ int cargarEmpleado(eEmpleado** emp, int size)
         {
             while(!feof(f))
             {
-                //voy a leer de a uno hasta que llegue a fin de fichero
-                indice = buscarLibre(emp,size);
-
                 //si no lo lee, es x que esta corrupto o es eof
-                cant = fread((emp+indice), sizeof(eEmpleado),1,f);
+                cant = fread((emp+size), sizeof(eEmpleado),1,f);
 
                 if(cant < 1)
                 {
@@ -324,6 +323,15 @@ int cargarEmpleado(eEmpleado** emp, int size)
                     {
                         printf("Problemas para leer el archivo\n");
                     }
+                }
+
+                size++;
+
+                aux = (eEmpleado**)realloc(*emp,sizeof(eEmpleado*)*(size+1));
+
+                if(aux !=NULL)
+                {
+                    *emp = aux;
                 }
             }
 
@@ -337,9 +345,58 @@ int cargarEmpleado(eEmpleado** emp, int size)
 
 }
 
-*/
 
 eEmpleado** agrandarLista(eEmpleado** emp, int size) //le pasas un solo * por que es la primer & de la struct, no la segunda por que eso es lista
 {
     return (eEmpleado**)realloc(*emp,sizeof(eEmpleado*)*(size+1)); //te paso esta lista que tiene 1, agregale 1 mas, y asi
+}
+
+int cargaDesdeBinario(eEmpleado** emp, int size)
+{
+    eEmpleado** aux;
+    eEmpleado* vec2 = *emp;
+    int retorno = 0;
+    FILE* f;
+    int cant;
+
+    if(emp !=NULL)
+    {
+        f = fopen("./empleados.bin","rb");
+
+        if(f !=NULL)
+        {
+            while(!feof(f))
+            {
+                //si no lo lee, es x que esta corrupto o es eof
+                cant = fread((emp+size), sizeof(eEmpleado),1,f);
+
+                if(cant < 1)
+                {
+                    if(feof(f))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        printf("Problemas para leer el archivo\n");
+                    }
+                }
+
+                size++;
+
+                aux = (eEmpleado**)realloc(*emp,sizeof(eEmpleado*)*(size+1));
+
+                if(aux !=NULL)
+                {
+                    *emp = aux;
+                }
+            }
+
+            retorno = 1;
+        }
+
+        fclose(f);
+    }
+
+    return retorno;
 }
