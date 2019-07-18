@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1561421068 source:c:\users\alumno\desktop\parcial\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561421434 c:\users\alumno\desktop\parcial\linkedlist.h
+
+1561419711 c:\users\alumno\desktop\parcial\empleado.h
+	"LinkedList.h"
+
+1561311960 c:\users\alumno\desktop\parcial\parser.h
+	"LinkedList.h"
+
+1561421618 source:c:\users\alumno\desktop\parcial\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+
+1561311962 c:\users\alumno\desktop\parcial\validaciones.h
+
+1561421490 source:c:\users\alumno\desktop\parcial\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561421851 source:c:\users\alumno\desktop\parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"Controller.h"
+	"Empleado.h"
+	"LinkedList.h"
+	"Parser.h"
+	"Validaciones.h"
+
+1561311958 c:\users\alumno\desktop\parcial\controller.h
+	"LinkedList.h"
+
+1561414968 source:c:\users\alumno\desktop\parcial\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561418247 source:c:\users\alumno\desktop\parcial\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"Validaciones.h"
+
