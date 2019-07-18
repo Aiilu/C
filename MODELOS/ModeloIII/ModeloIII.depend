@@ -1,0 +1,67 @@
+# depslib dependency file v1.0
+1561403256 source:e:\modelos\modeloiii\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561395634 e:\modelos\modeloiii\linkedlist.h
+
+1561400516 e:\modelos\modeloiii\empleado.h
+	"LinkedList.h"
+
+1561311960 e:\modelos\modeloiii\parser.h
+	"LinkedList.h"
+
+1561398398 source:e:\modelos\modeloiii\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561403306 source:e:\modelos\modeloiii\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Controller.h"
+	"Empleado.h"
+	"LinkedList.h"
+	"Parser.h"
+	"Validaciones.h"
+
+1561311958 e:\modelos\modeloiii\controller.h
+	"LinkedList.h"
+
+1561311962 e:\modelos\modeloiii\validaciones.h
+
+1561400814 source:e:\modelos\modeloiii\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561311960 source:e:\modelos\modeloiii\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561403750 source:e:\modelos\modeloiii\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+

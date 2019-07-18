@@ -1,0 +1,4 @@
+id_venta,nombre,apellido,dni,codProducto,montoTotal
+2,Leo,Magnaghi,40731473,1001,12999.990234
+3,wi,tonto,234567,1000,8999.990234
+4,de,jeje,3455678,1001,51999.960938

@@ -1,0 +1,199 @@
+# depslib dependency file v1.0
+1561325800 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561235678 c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\linkedlist.h
+
+1561322609 c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\empleado.h
+	"LinkedList.h"
+
+1561210266 c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\parser.h
+	"LinkedList.h"
+
+1561325708 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+
+1561210266 c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\validaciones.h
+
+1561316590 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561324022 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Controller.h"
+	"Empleado.h"
+	"LinkedList.h"
+	"Parser.h"
+	"Validaciones.h"
+
+1561311070 c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\controller.h
+	"LinkedList.h"
+
+1561325708 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561311105 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modeloii\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561340217 source:c:\users\usuario\downloads\modeloii\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561311958 c:\users\usuario\downloads\modeloii\linkedlist.h
+
+1561336167 c:\users\usuario\downloads\modeloii\empleado.h
+	"LinkedList.h"
+
+1561311960 c:\users\usuario\downloads\modeloii\parser.h
+	"LinkedList.h"
+
+1561340235 source:c:\users\usuario\downloads\modeloii\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+
+1561311962 c:\users\usuario\downloads\modeloii\validaciones.h
+
+1561311960 source:c:\users\usuario\downloads\modeloii\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561340410 source:c:\users\usuario\downloads\modeloii\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Controller.h"
+	"Empleado.h"
+	"LinkedList.h"
+	"Parser.h"
+	"Validaciones.h"
+
+1561311958 c:\users\usuario\downloads\modeloii\controller.h
+	"LinkedList.h"
+
+1561339270 source:c:\users\usuario\downloads\modeloii\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561311960 source:c:\users\usuario\downloads\modeloii\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561406183 source:c:\users\usuario\desktop\modeloii\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561311958 c:\users\usuario\desktop\modeloii\linkedlist.h
+
+1561336168 c:\users\usuario\desktop\modeloii\empleado.h
+	"LinkedList.h"
+
+1561311960 c:\users\usuario\desktop\modeloii\parser.h
+	"LinkedList.h"
+
+1561408107 source:c:\users\usuario\desktop\modeloii\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+
+1561311962 c:\users\usuario\desktop\modeloii\validaciones.h
+
+1561311960 source:c:\users\usuario\desktop\modeloii\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561406980 source:c:\users\usuario\desktop\modeloii\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Controller.h"
+	"Empleado.h"
+	"LinkedList.h"
+	"Parser.h"
+	"Validaciones.h"
+
+1561311958 c:\users\usuario\desktop\modeloii\controller.h
+	"LinkedList.h"
+
+1561405798 source:c:\users\usuario\desktop\modeloii\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561311960 source:c:\users\usuario\desktop\modeloii\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
