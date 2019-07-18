@@ -1,0 +1,414 @@
+# depslib dependency file v1.0
+1561138171 source:c:\users\e76b73a\downloads\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\empleado.c
+	"Empleado.h"
+	"LinkedList.h"
+
+1561137164 c:\users\e76b73a\downloads\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\empleado.h
+
+1561132409 c:\users\e76b73a\downloads\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\linkedlist.h
+
+1561132384 source:c:\users\e76b73a\downloads\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561138201 source:c:\users\e76b73a\downloads\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\parser.c
+	"LinkedList.h"
+
+1561140835 source:c:\users\e76b73a\downloads\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"Parser.h"
+	"LinkedList.h"
+
+1561138213 c:\users\e76b73a\downloads\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\parser.h
+	"LinkedList.h"
+
+1561148760 source:c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+
+1561147495 c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\empleado.h
+	"LinkedList.h"
+
+1561132409 c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\linkedlist.h
+
+1561147040 source:c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561148760 source:c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"Parser.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Validaciones.h"
+
+1561141479 c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\parser.h
+	"LinkedList.h"
+
+1560863648 c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\controller.h
+
+1561147821 source:c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561141519 source:c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1560863648 source:c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1560863648 c:\users\e76b73a\desktop\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\validaciones.h
+
+1561168146 source:c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561134720 c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\linkedlist.h
+
+1561134718 c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\empleado.h
+	"LinkedList.h"
+
+1561134720 c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\parser.h
+	"LinkedList.h"
+
+1561134718 source:c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+
+1561134722 c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\validaciones.h
+
+1561134718 source:c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561134720 source:c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"Parser.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Validaciones.h"
+
+1561134718 c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\controller.h
+
+1561134722 source:c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561168017 source:c:\users\lgm14\desktop\amor\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561210264 source:c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561210266 c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\linkedlist.h
+
+1561210264 c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\empleado.h
+	"LinkedList.h"
+
+1561210266 c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\parser.h
+	"LinkedList.h"
+
+1561210264 source:c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+
+1561210266 c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\validaciones.h
+
+1561210266 source:c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561210266 source:c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561226034 source:c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561225314 source:c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"Parser.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Validaciones.h"
+
+1561210264 c:\users\marcelo\desktop\ailu\kk\2doparcialhelp-master-20190622t173244z-001\2doparcialhelp-master\2doparcialhelp-master\ejerciciopre2doparcialv2\controller.h
+
+1561210264 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561210266 c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\linkedlist.h
+
+1561210264 c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\empleado.h
+	"LinkedList.h"
+
+1561210266 c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\parser.h
+	"LinkedList.h"
+
+1561210264 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+
+1561210266 c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\validaciones.h
+
+1561210266 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561210266 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561226034 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561226652 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"Parser.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Validaciones.h"
+
+1561210264 c:\users\marcelo\desktop\ailu\modelo parcial ii\ejerciciopre2doparcialv2\controller.h
+
+1561246233 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561235678 c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\linkedlist.h
+
+1561256093 c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\empleado.h
+	"LinkedList.h"
+
+1561210266 c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\parser.h
+	"LinkedList.h"
+
+1561258219 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+
+1561210266 c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\validaciones.h
+
+1561235704 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561236624 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561226034 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561257741 source:c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"Parser.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Validaciones.h"
+
+1561210264 c:\users\marcelo\desktop\ailu\modelo parcial ii\modelo i\controller.h
+
+1561311954 source:c:\users\usuario\downloads\modelo i\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+	"parser.h"
+
+1561311956 c:\users\usuario\downloads\modelo i\linkedlist.h
+
+1561311956 c:\users\usuario\downloads\modelo i\empleado.h
+	"LinkedList.h"
+
+1561311956 c:\users\usuario\downloads\modelo i\parser.h
+	"LinkedList.h"
+
+1561311956 source:c:\users\usuario\downloads\modelo i\empleado.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Validaciones.h"
+
+1561311958 c:\users\usuario\downloads\modelo i\validaciones.h
+
+1561311956 source:c:\users\usuario\downloads\modelo i\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561393052 source:c:\users\usuario\downloads\modelo i\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"Parser.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Validaciones.h"
+
+1561311954 c:\users\usuario\downloads\modelo i\controller.h
+
+1561311956 source:c:\users\usuario\downloads\modelo i\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Empleado.h"
+
+1561311958 source:c:\users\usuario\downloads\modelo i\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+

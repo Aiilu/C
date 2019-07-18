@@ -1,0 +1,770 @@
+# depslib dependency file v1.0
+1560362050 source:c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\employee.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"string.h"
+	"Validaciones.h"
+
+1560358986 c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\linkedlist.h
+
+1560362050 c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\employee.h
+
+1560361633 c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\validaciones.h
+
+1560360846 source:c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"string.h"
+	"Validaciones.h"
+	"parser.h"
+
+1560362513 source:c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"controller.h"
+	"Validaciones.h"
+
+1560361748 c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\parser.h
+
+1560362513 c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\controller.h
+
+1560361748 source:c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"LinkedList.h"
+	"Employee.h"
+
+1560361748 source:c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"Validaciones.h"
+
+1560360729 source:c:\users\bruno\desktop\tp-laboratorio-4\merge tp4 y tp3\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1560861230 source:c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"controller.h"
+	"Validaciones.h"
+
+1560861230 c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\linkedlist.h
+
+1560861230 c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\employee.h
+
+1560861230 c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\parser.h
+
+1560861230 c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\controller.h
+
+1560861631 c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\validaciones.h
+
+1560861230 source:c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\employee.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"string.h"
+	"Validaciones.h"
+
+1560861230 source:c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1560861230 source:c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"string.h"
+	"Validaciones.h"
+	"parser.h"
+
+1560861230 source:c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"LinkedList.h"
+	"Employee.h"
+
+1560861230 source:c:\users\e76b73a\downloads\tp-laboratorio-4-master\tp-laboratorio-4-master\merge tp4 y tp3\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"string.h"
+	"Validaciones.h"
+
+1560863648 source:c:\users\e76b73a\desktop\merge tp4 y tp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1560863648 c:\users\e76b73a\desktop\merge tp4 y tp3\linkedlist.h
+
+1560863648 c:\users\e76b73a\desktop\merge tp4 y tp3\employee.h
+	"LinkedList.h"
+
+1560863648 c:\users\e76b73a\desktop\merge tp4 y tp3\parser.h
+
+1560863648 source:c:\users\e76b73a\desktop\merge tp4 y tp3\employee.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validaciones.h"
+
+1560863648 c:\users\e76b73a\desktop\merge tp4 y tp3\validaciones.h
+
+1560863745 source:c:\users\e76b73a\desktop\merge tp4 y tp3\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1560863648 source:c:\users\e76b73a\desktop\merge tp4 y tp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1560863648 source:c:\users\e76b73a\desktop\merge tp4 y tp3\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1560863697 source:c:\users\e76b73a\desktop\merge tp4 y tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1560863648 c:\users\e76b73a\desktop\merge tp4 y tp3\controller.h
+
+1560863648 source:c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1560863648 c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\linkedlist.h
+
+1560863648 c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\employee.h
+	"LinkedList.h"
+
+1560863648 c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\parser.h
+
+1560882716 source:c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\employee.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validaciones.h"
+
+1560863648 c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\validaciones.h
+
+1560881607 source:c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1560863648 source:c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1560863648 source:c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1560887467 source:c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1560863648 c:\users\e76b73a\desktop\merge tp4 y tp3 - copia\controller.h
+
+1560914720 source:c:\users\usuario\desktop\merge tp4 y tp3 - copia\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1560863650 c:\users\usuario\desktop\merge tp4 y tp3 - copia\linkedlist.h
+
+1560972068 c:\users\usuario\desktop\merge tp4 y tp3 - copia\employee.h
+	"LinkedList.h"
+
+1560863650 c:\users\usuario\desktop\merge tp4 y tp3 - copia\parser.h
+
+1560971234 source:c:\users\usuario\desktop\merge tp4 y tp3 - copia\employee.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validaciones.h"
+
+1560863650 c:\users\usuario\desktop\merge tp4 y tp3 - copia\validaciones.h
+
+1560863650 source:c:\users\usuario\desktop\merge tp4 y tp3 - copia\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1560863650 source:c:\users\usuario\desktop\merge tp4 y tp3 - copia\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1560974294 source:c:\users\usuario\desktop\merge tp4 y tp3 - copia\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1560974514 source:c:\users\usuario\desktop\merge tp4 y tp3 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1560972068 c:\users\usuario\desktop\merge tp4 y tp3 - copia\controller.h
+
+1560988570 source:c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1560987751 c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\linkedlist.h
+
+1560987751 c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\employee.h
+	"LinkedList.h"
+
+1560987751 c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\parser.h
+
+1560988482 source:c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\employee.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validaciones.h"
+
+1560987751 c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\validaciones.h
+
+1560987751 source:c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1560987751 source:c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1560987751 source:c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1560988570 source:c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1560988585 c:\users\alumno\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\controller.h
+
+1560974830 source:c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1560974840 c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\linkedlist.h
+
+1561058895 c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\employee.h
+	"LinkedList.h"
+
+1560974842 c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\parser.h
+
+1561062162 source:c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\employee.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validaciones.h"
+
+1560974844 c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\validaciones.h
+
+1561062145 source:c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1560974832 c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\controller.h
+
+1560974844 source:c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1560974844 source:c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561062191 source:c:\users\usuario\downloads\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561124960 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1561128402 c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\linkedlist.h
+
+1561128929 c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\employee.h
+	"LinkedList.h"
+
+1561124960 c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\parser.h
+
+1561128929 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\employee.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validaciones.h"
+
+1561124960 c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\validaciones.h
+
+1561128986 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1561124960 c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\controller.h
+
+1561125883 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1561124960 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561128881 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561124960 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1561132409 c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\linkedlist.h
+
+1561131631 c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\employee.h
+	"LinkedList.h"
+
+1561124960 c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\parser.h
+
+1561132384 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561131650 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1561124960 c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\controller.h
+
+1561124960 c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\validaciones.h
+
+1561125883 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1561124960 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561131631 source:c:\users\e76b73a\downloads\merge tp4 y tp3 - copia-20190619t234125z-001-20190621t133428z-001 - copia\merge tp4 y tp3 - copia-20190619t234125z-001\merge tp4 y tp3 - copia\employee.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validaciones.h"
+
+1561160153 source:c:\users\lgm14\desktop\merge tp4 y tp3 - copia\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1561161570 c:\users\lgm14\desktop\merge tp4 y tp3 - copia\linkedlist.h
+
+1561161684 c:\users\lgm14\desktop\merge tp4 y tp3 - copia\employee.h
+	"LinkedList.h"
+
+1561122470 c:\users\lgm14\desktop\merge tp4 y tp3 - copia\parser.h
+
+1561161182 source:c:\users\lgm14\desktop\merge tp4 y tp3 - copia\employee.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validaciones.h"
+
+1561122470 c:\users\lgm14\desktop\merge tp4 y tp3 - copia\validaciones.h
+
+1561161925 source:c:\users\lgm14\desktop\merge tp4 y tp3 - copia\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"LinkedList.h"
+
+1561160166 source:c:\users\lgm14\desktop\merge tp4 y tp3 - copia\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1561160173 source:c:\users\lgm14\desktop\merge tp4 y tp3 - copia\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561162052 source:c:\users\lgm14\desktop\merge tp4 y tp3 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1561122464 c:\users\lgm14\desktop\merge tp4 y tp3 - copia\controller.h
+
+1561160153 source:c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1561161570 c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\linkedlist.h
+
+1561161684 c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\employee.h
+	"LinkedList.h"
+
+1561122470 c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\parser.h
+
+1561161182 source:c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\employee.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validaciones.h"
+
+1561122470 c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\validaciones.h
+
+1561162944 source:c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1561122464 c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\controller.h
+
+1561160166 source:c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1561160173 source:c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561167329 source:c:\users\lgm14\desktop\amor\merge tp4 y tp3 - copia\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"LinkedList.h"
+
+1561210258 source:c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1561210260 c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\linkedlist.h
+
+1561392143 c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\employee.h
+	"LinkedList.h"
+
+1561210262 c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\parser.h
+
+1561392426 source:c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\employee.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<conio.h>
+	"Employee.h"
+	"LinkedList.h"
+	"validaciones.h"
+
+1561210262 c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\validaciones.h
+
+1561210262 source:c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1561210258 c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\controller.h
+
+1561392426 source:c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1561392426 source:c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"validaciones.h"
+
+1561392143 source:c:\users\usuario\desktop\modelos\merge tp4 y tp3 - copia\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"LinkedList.h"
+
